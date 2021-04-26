@@ -1,3 +1,12 @@
-<app-navi></app-navi>
-<app-product-unit></app-product-unit>
-<router-outlet></router-outlet>
+<div class="container">
+    <app-navi></app-navi>
+    <div class="row">
+        <div class="col-md-3">
+           <app-operation></app-operation>
+        </div>
+        <div class="col-md-9">
+            <app-product-unit></app-product-unit>
+        </div>       
+    </div>
+    <router-outlet></router-outlet>
+</div>
