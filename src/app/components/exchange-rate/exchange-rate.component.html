@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>USD</th>
+            <th>EURO</th>
+            <th>STERLIN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let exchageRate of exchangeRates">
+            <td>{{exchageRate.id}}</td>
+            <td>{{exchageRate.USD}}</td>
+            <td>{{exchageRate.EURO}}</td>
+            <td>{{exchageRate.STERLIN}}</td>
+        </tr>
+    </tbody>    
+</table>

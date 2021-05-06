@@ -7,15 +7,17 @@ import { AppComponent } from './app.component';
 import { ProductUnitComponent } from './components/product-unit/product-unit.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { OperationComponent } from './components/operation/operation.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductUnitComponent,
     BrandComponent,
-    NaviComponent,
-    OperationComponent
+    NaviComponent,    
+    SidebarComponent,
+    ExchangeRateComponent
   ],
   imports: [
     BrowserModule,
