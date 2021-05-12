@@ -1,0 +1,20 @@
+<div class="content mt-4" >
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Ürün Birimi Ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="productUnitAddForm">
+                    <label for="productUnitName">Ürün birimi adı</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" type="text" id="productUnitName" formControlName="productUnitName" placeholder="Ürün birimi adı"/>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            </div>
+        </div>
+    </div>   
+</div>

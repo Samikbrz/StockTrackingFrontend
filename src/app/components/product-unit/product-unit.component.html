@@ -1,3 +1,10 @@
+<div class="mb-3  mt-3">
+    <label for="filterText" class="form-label">Ürün Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün ismini yazınız">
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+    {{filterText}} aradınız.
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -6,9 +13,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products |filterPipe:filterText">
             <td>{{product.id}}</td>
-            <td>{{product.productUnitName}}</td>
+            <td>{{product.productUnitName |uppercase}}</td>
         </tr>
     </tbody>    
 </table>
