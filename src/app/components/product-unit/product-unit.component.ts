@@ -12,11 +12,11 @@ export class ProductUnitComponent implements OnInit {
   products: ProductUnit[] = []; 
   selectedProductUnit:ProductUnit=null;
   public filterText="";
- 
+  
   constructor(private productUnitService:ProductUnitService, private toastrService:ToastrService) {}
 
   ngOnInit(): void {
-    this.getProductUnits();
+    this.getProductUnits();    
   }
 
   getProductUnits() {
@@ -34,7 +34,8 @@ export class ProductUnitComponent implements OnInit {
     }    
   }
 
-  selectedProduct(productUnit:ProductUnit){
+  setCurrentProduct(productUnit:ProductUnit){
     this.selectedProductUnit=productUnit;
   }
+  
 }

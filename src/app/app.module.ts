@@ -15,8 +15,9 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import {ToastrModule} from "ngx-toastr";
-import { ProductUnitAddComponent } from './components/product-unit-add/product-unit-add.component';
+import { ProductUnitAddComponent } from './components/product-unit/product-unit-add/product-unit-add.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
+import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProposalComponent } from './components/proposal/proposal.component';
     VatAddedPipe,
     FilterPipePipe,
     ProductUnitAddComponent,
-    ProposalComponent
+    ProposalComponent,
+    ProductUnitEditComponent
   ],
   imports: [
     BrowserModule,

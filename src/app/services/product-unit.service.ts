@@ -18,6 +18,11 @@ export class ProductUnitService {
     return this.httpClient.get<ListResponseModel<ProductUnit>>(newPath);     
   }
 
+  getProductUnitsById(productUnitId:number):Observable<ListResponseModel<ProductUnit>>{
+    let newPath=this.apiUrl+'/productunits/getproductunitbyid?id='+productUnitId;
+    return this.httpClient.get<ListResponseModel<ProductUnit>>(newPath);
+  }
+
   add(productUnit:ProductUnit):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+'/productunits/add',productUnit);
   }
