@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
 import { ExchangeRate } from '../models/exchangeRate';
 import { ListResponseModel } from '../models/listResponseModel';
 
@@ -9,10 +9,11 @@ import { ListResponseModel } from '../models/listResponseModel';
 })
 export class ExchangeRateService {
 
-  apiUrl = 'https://localhost:44359/api/exchangerate/getall';
+  apiUrl = 'https://localhost:44359/api';
   constructor(private httpClient: HttpClient) { }
 
   getExchangeRates() : Observable<ListResponseModel<ExchangeRate>>{
-    return this.httpClient.get<ListResponseModel<ExchangeRate>>(this.apiUrl);     
+    let newPath=this.apiUrl+'/exchangerate/getall';
+    return this.httpClient.get<ListResponseModel<ExchangeRate>>(newPath);     
   }
 }

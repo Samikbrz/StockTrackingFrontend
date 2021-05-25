@@ -16,6 +16,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import {ToastrModule} from "ngx-toastr";
 import { ProductUnitAddComponent } from './components/product-unit-add/product-unit-add.component';
+import { ProposalComponent } from './components/proposal/proposal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductUnitAddComponent } from './components/product-unit-add/product-u
     ExchangeRateComponent,
     VatAddedPipe,
     FilterPipePipe,
-    ProductUnitAddComponent
+    ProductUnitAddComponent,
+    ProposalComponent
   ],
   imports: [
     BrowserModule,

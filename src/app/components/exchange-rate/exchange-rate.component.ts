@@ -11,7 +11,9 @@ export class ExchangeRateComponent implements OnInit {
   exchangeRates: ExchangeRate[] = [];
   constructor(private exchageRateService: ExchangeRateService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getExchageRates();
+  }
 
   getExchageRates() {
     this.exchageRateService.getExchangeRates().subscribe(response => {
