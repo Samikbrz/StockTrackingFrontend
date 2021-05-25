@@ -31,7 +31,7 @@ import { ProductUnitEditComponent } from './components/product-unit/product-unit
     FilterPipePipe,
     ProductUnitAddComponent,
     ProposalComponent,
-    ProductUnitEditComponent
+    ProductUnitEditComponent,
   ],
   imports: [
     BrowserModule,

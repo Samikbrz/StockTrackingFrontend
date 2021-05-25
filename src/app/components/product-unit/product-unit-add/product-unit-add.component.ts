@@ -9,6 +9,7 @@ import { ProductUnitService } from 'src/app/services/product-unit.service';
   styleUrls: ['./product-unit-add.component.css'],
 })
 export class ProductUnitAddComponent implements OnInit {
+
   productUnitAddForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -29,13 +30,11 @@ export class ProductUnitAddComponent implements OnInit {
   add() {
     if (this.productUnitAddForm.valid) {
       let productModel = Object.assign({}, this.productUnitAddForm.value);
-      this.productUnitService.add(productModel).subscribe(data=>{
-        this.toastrService.success(data.message,"Success");
-      },responseError=>{        
-        this.toastrService.error(responseError.error)
+      this.productUnitService.add(productModel).subscribe((response)=>{
+        this.toastrService.success(response.message,"Başarılı");        
+      },(responseError)=>{        
+        this.toastrService.error(responseError.error.message)
       });      
-    }else{
-      this.toastrService.error("İnput hatalı","Error");
     }
   }
 }

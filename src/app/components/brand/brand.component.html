@@ -1,1 +1,27 @@
-<p>brand works!</p>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Marka Adı</th>
+            <th>Açıklama 1</th>
+            <th>Açıklama 2</th>            
+            <th>Güncelle</th>  
+            <th>Sil</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let brand of brands ">
+            <td>{{brand.id}}</td>
+            <td>{{brand.brandName}}</td>
+            <td>{{brand.description_1}}</td>
+            <td>{{brand.description_2}}</td>            
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/productunit/update/{{brand.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+            </td>           
+        </tr>   
+        <button type="button" class="btn btn-success mt-2" routerLink="/productunits/add">Yeni Marka Ekle</button>   
+    </tbody>    
+</table>

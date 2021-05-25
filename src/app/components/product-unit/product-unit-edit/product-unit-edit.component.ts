@@ -43,8 +43,8 @@ export class ProductUnitEditComponent implements OnInit {
       productUnitModel.id=this.productUnits.id;
       this.productUnitService.update(productUnitModel).subscribe(
         (response) => {        
-          this.toastrService.success('Ürün birimi güncellendi','Başarılı');
-          window.location.reload();         
+          this.toastrService.success('Ürün birimi güncellendi','Başarılı');          
+          window.location.reload();                  
         },(responseError) => {
           this.toastrService.success(responseError.error.Errors.message,"Hata");
         }
