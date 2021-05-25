@@ -21,4 +21,12 @@ export class ProductUnitService {
   add(productUnit:ProductUnit):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+'/productunits/add',productUnit);
   }
+
+  delete(productUnit:ProductUnit):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"/productunits/delete",productUnit);
+  }
+
+  update(productUnit:ProductUnit):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"/productunits/update",productUnit);
+  }
 }

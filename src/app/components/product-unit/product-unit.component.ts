@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProductUnit } from 'src/app/models/productUnit';
 import { ProductUnitService } from 'src/app/services/product-unit.service';
 
@@ -9,9 +10,10 @@ import { ProductUnitService } from 'src/app/services/product-unit.service';
 })
 export class ProductUnitComponent implements OnInit {
   products: ProductUnit[] = []; 
+  selectedProductUnit:ProductUnit=null;
   public filterText="";
  
-  constructor(private productUnitService:ProductUnitService) {}
+  constructor(private productUnitService:ProductUnitService, private toastrService:ToastrService) {}
 
   ngOnInit(): void {
     this.getProductUnits();
@@ -21,5 +23,18 @@ export class ProductUnitComponent implements OnInit {
     this.productUnitService.getProductUnits().subscribe(response=>{
       this.products=response.data
     })
+  }
+
+  deleteProductUnit(productUnit:ProductUnit){
+    if(window.confirm("Are you sure?")){
+      this.productUnitService.delete(productUnit).subscribe(response=>{
+        this.toastrService.success("Deleted")
+        window.location.reload();
+      })
+    }    
+  }
+
+  selectedProduct(productUnit:ProductUnit){
+    this.selectedProductUnit=productUnit;
   }
 }
