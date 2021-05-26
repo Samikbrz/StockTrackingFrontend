@@ -24,4 +24,13 @@ export class CompanyComponent implements OnInit {
       this.companies=response.data
     })
   }
+
+  deleteCompany(company:Company){
+    if(window.confirm("Are you sure?")){
+      this.companyService.delete(company).subscribe(response=>{
+        this.toastrService.success("Deleted")
+        window.location.reload();
+      })
+    }    
+  }
 }
