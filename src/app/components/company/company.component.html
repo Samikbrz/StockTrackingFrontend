@@ -1,0 +1,35 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Şirket Adı</th>
+            <th>Adres</th>
+            <th>Tel 1</th> 
+            <th>Tel 2</th>
+            <th>Fax</th>
+            <th>Vergi No</th>
+            <th>Vergi Adı</th>           
+            <th>Güncelle</th>  
+            <th>Sil</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let company of companies ">
+            <td>{{company.id}}</td>
+            <td>{{company.companyName}}</td>
+            <td>{{company.address}}</td>
+            <td>{{company.tel1}}</td>
+            <td>{{company.tel2}}</td>
+            <td>{{company.fax}}</td>
+            <td>{{company.taxNo}}</td>
+            <td>{{company.taxName}}</td>            
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/productunit/update/{{company.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+            </td>           
+        </tr>   
+        <button type="button" class="btn btn-success mt-2" routerLink="/company/add">Yeni Şirket Ekle</button>   
+    </tbody>    
+</table>

@@ -18,6 +18,8 @@ import {ToastrModule} from "ngx-toastr";
 import { ProductUnitAddComponent } from './components/product-unit/product-unit-add/product-unit-add.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
+import { CompanyComponent } from './components/company/company.component';
+import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ProductUnitEditComponent } from './components/product-unit/product-unit
     ProductUnitAddComponent,
     ProposalComponent,
     ProductUnitEditComponent,
+    CompanyComponent,
+    CompanyEditComponent,
   ],
   imports: [
     BrowserModule,

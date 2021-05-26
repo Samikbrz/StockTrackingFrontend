@@ -6,6 +6,5 @@ export interface Company{
     tel2:Number;
     fax:number;
     taxNo:number;
-    taxName:String;
-    prpposalId:number;
+    taxName:String;    
 }
