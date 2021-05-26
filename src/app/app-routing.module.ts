@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrandComponent } from './components/brand/brand.component';
+import { CompanyAddComponent } from './components/company/company-add/company-add.component';
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 import { CompanyComponent } from './components/company/company.component';
 import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"brands",component:BrandComponent},
   {path:"companies",component:CompanyComponent},
   {path:"company/update/:companyId",component:CompanyEditComponent},
+  {path:"company/add",component:CompanyAddComponent},
 ];
 
 @NgModule({

@@ -20,6 +20,7 @@ import { ProposalComponent } from './components/proposal/proposal.component';
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
 import { CompanyComponent } from './components/company/company.component';
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
+import { CompanyAddComponent } from './components/company/company-add/company-add.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CompanyEditComponent } from './components/company/company-edit/company-
     ProposalComponent,
     ProductUnitEditComponent,
     CompanyComponent,
-    CompanyEditComponent,   
+    CompanyEditComponent,
+    CompanyAddComponent,   
   ],
   imports: [
     BrowserModule,
