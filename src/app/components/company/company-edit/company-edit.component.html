@@ -1,0 +1,78 @@
+<div class="content mt-4" >
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Firma Güncelle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="companyUpdateForm">                    
+                    <label for="companyName">Firma adı</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="companyName"
+                        formControlName="companyName"
+                        value="{{ company?.companyName}}" 
+                        />
+                    </div>
+
+                    <label for="address">Adres</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="address"
+                        formControlName="address"
+                        value="{{ company?.address}}" 
+                        />
+                    </div>
+
+                    <label for="tel1">Tel 1</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="tel1"
+                        formControlName="tel1"
+                        value="{{ company?.tel1}}" 
+                        />
+                    </div>
+
+                    <label for="tel2">Tel 2</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="tel2"
+                        formControlName="tel2"
+                        value="{{ company?.tel2}}" 
+                        />
+                    </div>
+
+                    <label for="fax">Fax</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="fax"
+                        formControlName="fax"
+                        value="{{ company?.fax}}" 
+                        />
+                    </div>
+
+                    <label for="taxNo">Vergi No</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="taxNo"
+                        formControlName="taxNo"
+                        value="{{ company?.taxNo}}" 
+                        />
+                    </div>
+
+                    <label for="taxName">Vergi Adı</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="taxName"
+                        formControlName="taxName"
+                        value="{{ company?.taxName}}" 
+                        />
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" routerLink="/companies" (click)="updateCompany()">Güncelle</button>
+            </div>
+        </div>
+    </div>   
+</div>

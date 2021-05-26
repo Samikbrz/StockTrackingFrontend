@@ -35,7 +35,7 @@ import { CompanyEditComponent } from './components/company/company-edit/company-
     ProposalComponent,
     ProductUnitEditComponent,
     CompanyComponent,
-    CompanyEditComponent,
+    CompanyEditComponent,   
   ],
   imports: [
     BrowserModule,

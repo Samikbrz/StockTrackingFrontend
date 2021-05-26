@@ -24,10 +24,10 @@
             <td>{{company.taxNo}}</td>
             <td>{{company.taxName}}</td>            
             <td>
-                <button type="button" class="btn btn-primary" routerLink="/productunit/update/{{company.id}}" >Güncelle</button>                
+                <button type="button" class="btn btn-primary" routerLink="/company/update/{{company.id}}">Güncelle</button>                
             </td> 
             <td>                
-                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+                <button type="button" class="btn btn-danger  ml-2" routerLink="/company/delete">Sil</button>
             </td>           
         </tr>   
         <button type="button" class="btn btn-success mt-2" routerLink="/company/add">Yeni Şirket Ekle</button>   
