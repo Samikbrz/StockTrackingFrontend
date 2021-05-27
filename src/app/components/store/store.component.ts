@@ -30,7 +30,7 @@ export class StoreComponent implements OnInit {
   deleteStore(store:Store){    
     if(window.confirm("Depoyu silmek istediğinizden emin misiniz?")){
       this.storeService.delete(store).subscribe(response=>{
-        this.toastrService.success("Deleted")
+        this.toastrService.success("Silindi","Başarılı")
         window.location.reload();
       })
     } 
