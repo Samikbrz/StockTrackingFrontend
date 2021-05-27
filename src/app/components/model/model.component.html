@@ -21,7 +21,7 @@
                 <button type="button" class="btn btn-primary" routerLink="/model/update/{{model.id}}" >Güncelle</button>                
             </td> 
             <td>                
-                <button type="button" class="btn btn-danger  ml-2">Sil</button>
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteModel(model)">Sil</button>
             </td>           
         </tr>   
         <button type="button" class="btn btn-success mt-2" routerLink="/model/add">Yeni Model Ekle</button>   

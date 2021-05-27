@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Model } from 'src/app/models/model';
 import { ModelDetail } from 'src/app/models/modelDetail';
 import { ModelService } from 'src/app/services/model.service';
@@ -12,7 +13,7 @@ export class ModelComponent implements OnInit {
 
   models:ModelDetail[]=[];
 
-  constructor(private modelService:ModelService) { }
+  constructor(private modelService:ModelService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getModels();
@@ -23,4 +24,13 @@ export class ModelComponent implements OnInit {
       this.models=response.data
     })
   }  
+
+  deleteModel(model:Model){
+    if(window.confirm("Are you sure?")){
+      this.modelService.delete(model).subscribe(response=>{
+        this.toastrService.success("Silindi.")
+        window.location.reload();
+      })
+    }    
+  }
 }

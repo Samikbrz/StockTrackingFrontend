@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="title">Firma Ekle</h5>
+                <h5 class="title">Depo Ekle</h5>
             </div>
             <div class="card-body">
                 <form [formGroup]="storeAddForm">                    
@@ -14,7 +14,7 @@
                         />
                     </div>                      
                     <label for="isSalesStore">Satış Deposu mu?</label>                   
-                    <select class="form-select mt-1 mb-3" aria-label="Default select example" formControlName="isSalesStore">                       
+                    <select class="form-select mt-1 mb-3" formControlName="isSalesStore">                       
                         <option  value="Evet">Evet</option>
                         <option  value="Hayır">Hayır</option>                                             
                     </select>                    
