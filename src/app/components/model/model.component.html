@@ -1,0 +1,29 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model adı</th>
+            <th>Model Tanımı</th>   
+            <th>Orjinal Barkod</th>             
+            <th>Güncelle</th>  
+            <th>Sil</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let model of models ">
+            <td>{{model.id}}</td>
+            <td>{{model.brandName}}</td>
+            <td>{{model.modelName}}</td>
+            <td>{{model.modelDefination}}</td> 
+            <td>{{model.originalBarcode}}</td>           
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/model/update/{{model.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2">Sil</button>
+            </td>           
+        </tr>   
+        <button type="button" class="btn btn-success mt-2" routerLink="/model/add">Yeni Model Ekle</button>   
+    </tbody>    
+</table>

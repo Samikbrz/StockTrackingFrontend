@@ -26,6 +26,7 @@ import { StoreAddComponent } from './components/store/store-add/store-add.compon
 import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
 import { BrandEditComponent } from './components/brand/brand-edit/brand-edit.component';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
+import { ModelComponent } from './components/model/model.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { BrandAddComponent } from './components/brand/brand-add/brand-add.compon
     StoreAddComponent,
     StoreEditComponent,
     BrandEditComponent,
-    BrandAddComponent,   
+    BrandAddComponent,
+    ModelComponent,   
   ],
   imports: [
     BrowserModule,
