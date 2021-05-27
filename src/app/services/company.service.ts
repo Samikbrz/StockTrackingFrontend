@@ -19,9 +19,8 @@ export class CompanyService {
     return this.httpClient.get<ListResponseModel<Company>>(newPath);
   }
 
-  add(company:Company):Observable<ResponseModel>{
-    let newPath=this.apiUrl+"/company/add";
-    return  this.httpClient.post<ResponseModel>(newPath,company);
+  add(company:Company):Observable<ResponseModel>{    
+    return  this.httpClient.post<ResponseModel>(this.apiUrl+"/company/add",company);
   }
 
   update(company:Company):Observable<ResponseModel>{    
