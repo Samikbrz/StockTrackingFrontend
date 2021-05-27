@@ -8,6 +8,7 @@ import { CompanyEditComponent } from './components/company/company-edit/company-
 import { CompanyComponent } from './components/company/company.component';
 import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
 import { ModelAddComponent } from './components/model/model-add/model-add.component';
+import { ModelEditComponent } from './components/model/model-edit/model-edit.component';
 import { ModelComponent } from './components/model/model.component';
 import { ProductUnitAddComponent } from './components/product-unit/product-unit-add/product-unit-add.component';
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:"store/update/:storeId",component:StoreEditComponent},
   {path:"models",component:ModelComponent},
   {path:"model/add",component:ModelAddComponent},
+  {path:"model/update/:modelId",component:ModelEditComponent},
 ];
 
 @NgModule({
