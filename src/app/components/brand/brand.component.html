@@ -19,7 +19,7 @@
                 <button type="button" class="btn btn-primary" routerLink="/brand/update/{{brand.id}}" >Güncelle</button>                
             </td> 
             <td>                
-                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteBrand(brand)">Sil</button>
             </td>           
         </tr>   
         <button type="button" class="btn btn-success mt-2" routerLink="/brand/add">Yeni Marka Ekle</button>   
