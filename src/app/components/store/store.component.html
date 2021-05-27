@@ -1,0 +1,25 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Depo Adı</th>
+            <th>Satış Deposu mu?</th>   
+            <th>Güncelle</th>  
+            <th>Sil</th>         
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let store of stores">
+            <td>{{store.id}}</td>
+            <td>{{store.storeName}}</td>
+            <td>{{store.isSalesStore}}</td>   
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/store/update/{{store.id}}">Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteStore(store)">Sil</button>
+            </td>           
+        </tr>
+        <button type="button" class="btn btn-success mt-2" routerLink="/company/add">Yeni Şirket Ekle</button>
+    </tbody>    
+</table>

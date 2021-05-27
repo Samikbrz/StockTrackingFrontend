@@ -21,6 +21,8 @@ import { ProductUnitEditComponent } from './components/product-unit/product-unit
 import { CompanyComponent } from './components/company/company.component';
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 import { CompanyAddComponent } from './components/company/company-add/company-add.component';
+import { StoreComponent } from './components/store/store.component';
+import { StoreAddComponent } from './components/store/store-add/store-add.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CompanyAddComponent } from './components/company/company-add/company-ad
     ProductUnitEditComponent,
     CompanyComponent,
     CompanyEditComponent,
-    CompanyAddComponent,   
+    CompanyAddComponent,
+    StoreComponent,
+    StoreAddComponent,   
   ],
   imports: [
     BrowserModule,
