@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrandEditComponent } from './components/brand/brand-edit/brand-edit.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { CompanyAddComponent } from './components/company/company-add/company-add.component';
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
@@ -16,14 +17,15 @@ import { StoreComponent } from './components/store/store.component';
 const routes: Routes = [  
   {path:"",component:ProductUnitComponent},
   {path:"productunits",component:ProductUnitComponent},
-  {path:"exchangerate",component:ExchangeRateComponent},
-  {path:"proposals",component:ProposalComponent},
   {path:"productunits/add",component:ProductUnitAddComponent},
   {path:"productunit/update/:productUnitId",component:ProductUnitEditComponent},
+  {path:"exchangerate",component:ExchangeRateComponent},
+  {path:"proposals",component:ProposalComponent},  
   {path:"brands",component:BrandComponent},
+  {path:"brand/update/:brandId",component:BrandEditComponent},
   {path:"companies",component:CompanyComponent},
-  {path:"company/update/:companyId",component:CompanyEditComponent},
   {path:"company/add",component:CompanyAddComponent},
+  {path:"company/update/:companyId",component:CompanyEditComponent},  
   {path:"stores",component:StoreComponent},
   {path:"store/add",component:StoreAddComponent},
   {path:"store/update/:storeId",component:StoreEditComponent},

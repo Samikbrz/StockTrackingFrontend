@@ -3,5 +3,5 @@ export interface Model{
     modelName:String;
     modelDefination:String
     orginalBarcode:String;
-    stockId:Number;
+    brandId:Number;
 }
