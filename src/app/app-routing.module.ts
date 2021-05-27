@@ -10,6 +10,7 @@ import { ProductUnitEditComponent } from './components/product-unit/product-unit
 import { ProductUnitComponent } from './components/product-unit/product-unit.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { StoreAddComponent } from './components/store/store-add/store-add.component';
+import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
 import { StoreComponent } from './components/store/store.component';
 
 const routes: Routes = [  
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:"company/add",component:CompanyAddComponent},
   {path:"stores",component:StoreComponent},
   {path:"store/add",component:StoreAddComponent},
+  {path:"store/update/:storeId",component:StoreEditComponent},
 ];
 
 @NgModule({

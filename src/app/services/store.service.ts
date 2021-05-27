@@ -18,7 +18,7 @@ export class StoreService {
     return this.httpClient.get<ListResponseModel<Store>>(newPath);
   }
 
-  getById(storeId:number):Observable<ListResponseModel<Store>>{
+  getStoreById(storeId:number):Observable<ListResponseModel<Store>>{
     let newPath=this.apiUrl+'/store/getstorebyid?id='+storeId;
     return this.httpClient.get<ListResponseModel<Store>>(newPath);
   }
