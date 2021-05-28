@@ -14,6 +14,7 @@ import { ProductUnitAddComponent } from './components/product-unit/product-unit-
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
 import { ProductUnitComponent } from './components/product-unit/product-unit.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
+import { ShelfComponent } from './components/shelf/shelf.component';
 import { StoreAddComponent } from './components/store/store-add/store-add.component';
 import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
 import { StoreComponent } from './components/store/store.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:"models",component:ModelComponent},
   {path:"model/add",component:ModelAddComponent},
   {path:"model/update/:modelId",component:ModelEditComponent},
+  {path:"shelves",component:ShelfComponent},
 ];
 
 @NgModule({

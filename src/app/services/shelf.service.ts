@@ -20,7 +20,7 @@ export class ShelfService {
   }
 
   getShelfById(shelfId:number):Observable<ListResponseModel<ShelfDetail>>{
-    let newPath=this.apiUrl+"/shelf/getmodelbyid?id="+shelfId;
+    let newPath=this.apiUrl+"/shelf/getbyid?id="+shelfId;
     return this.httpClient.get<ListResponseModel<ShelfDetail>>(newPath);
   }
 

@@ -1,0 +1,23 @@
+<table class="table table-striped table-dark mt-2">
+    <thead class="thead-light">
+        <tr>           
+            <th>Raf Adı</th>
+            <th>Depo Adı</th>                         
+            <th>Güncelle</th>  
+            <th>Sil</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let shelf of shelves ">           
+            <td>{{shelf.shelfName}}</td>
+            <td>{{shelf.storeName}}</td>                      
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/shelf/update/{{shelf.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteShelf(shelf)">Sil</button>
+            </td>           
+        </tr>   
+        <button type="button" class="btn btn-success mt-2" routerLink="/shelf/add">Yeni Raf Ekle</button>   
+    </tbody>    
+</table>
