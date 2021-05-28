@@ -1,7 +1,6 @@
-<table class="table">
+<table class="table table-striped table-dark mt-2">
     <thead class="thead-light">
-        <tr>
-            <th>Id</th>
+        <tr>           
             <th>Brand</th>
             <th>Model adı</th>
             <th>Model Tanımı</th>   
@@ -11,8 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let model of models ">
-            <td>{{model.id}}</td>
+        <tr *ngFor="let model of models ">           
             <td>{{model.brandName}}</td>
             <td>{{model.modelName}}</td>
             <td>{{model.modelDefination}}</td> 

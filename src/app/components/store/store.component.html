@@ -1,7 +1,6 @@
-<table class="table">
+<table class="table table-striped table-dark mt-2">
     <thead class="thead-light">
-        <tr>
-            <th>Id</th>
+        <tr>           
             <th>Depo Adı</th>
             <th>Satış Deposu mu?</th>   
             <th>Güncelle</th>  
@@ -9,8 +8,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let store of stores">
-            <td>{{store.id}}</td>
+        <tr *ngFor="let store of stores">           
             <td>{{store.storeName}}</td>
             <td>{{store.isSalesStore}}</td>   
             <td>

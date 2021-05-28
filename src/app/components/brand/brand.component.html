@@ -1,7 +1,6 @@
-<table class="table">
+<table class="table table-striped table-dark mt-2">
     <thead class="thead-light">
-        <tr>
-            <th>Id</th>
+        <tr>           
             <th>Marka Adı</th>
             <th>Açıklama 1</th>
             <th>Açıklama 2</th>            
@@ -10,8 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let brand of brands ">
-            <td>{{brand.id}}</td>
+        <tr *ngFor="let brand of brands ">            
             <td>{{brand.brandName}}</td>
             <td>{{brand.description_1}}</td>
             <td>{{brand.description_2}}</td>            
