@@ -1,0 +1,23 @@
+<table class="table table-striped table-dark mt-2">
+    <thead class="thead-light">
+        <tr>           
+            <th>Çekmece Adı</th>
+            <th>Raf Adı</th>                         
+            <th>Güncelle</th>  
+            <th>Sil</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let drawer of drawers ">           
+            <td>{{drawer.drawerName}}</td> 
+            <td>{{drawer.shelfName}}</td>                     
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/drawer/update/{{drawer.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteDrawer(drawer)">Sil</button>
+            </td>           
+        </tr>   
+        <button type="button" class="btn btn-success mt-2" routerLink="/drawer/add">Yeni Çekmece Ekle</button>   
+    </tbody>    
+</table>
