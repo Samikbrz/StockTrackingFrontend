@@ -7,6 +7,7 @@ import { CompanyAddComponent } from './components/company/company-add/company-ad
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 import { CompanyComponent } from './components/company/company.component';
 import { DrawerAddComponent } from './components/drawer/drawer-add/drawer-add.component';
+import { DrawerEditComponent } from './components/drawer/drawer-edit/drawer-edit.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
 import { ModelAddComponent } from './components/model/model-add/model-add.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path:"shelf/update/:shelfId",component:ShelfEditComponent},
   {path:"drawers",component:DrawerComponent},
   {path:"drawer/add",component:DrawerAddComponent},
+  {path:"drawer/update/:drawerId",component:DrawerEditComponent},
 ];
 
 @NgModule({
