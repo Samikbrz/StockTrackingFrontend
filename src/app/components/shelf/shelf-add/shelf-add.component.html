@@ -6,14 +6,14 @@
             </div>
             <div class="card-body">
                 <form [formGroup]="shelfAddForm">                    
-                    <label for="shelfName">Model adı</label>
+                    <label for="shelfName">Raf adı</label>
                     <div class="form-group mt-1 mb-3">
                         <input class="form-control" 
                         type="text" id="shelfName"
                         formControlName="shelfName"                       
                         />
                     </div>                      
-                    <label for="storeId">Marka</label>                   
+                    <label for="storeId">Depo</label>                   
                     <select class="form-select mt-1 mb-3" formControlName="storeId">                       
                         <option  [ngValue]="store.id" *ngFor="let store of stores">{{store.storeName}}</option>                                                                    
                     </select>                   

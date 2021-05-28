@@ -1,0 +1,29 @@
+<div class="content mt-4" >
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Çekmece Ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="drawerAddForm">                    
+                    <label for="drawerName">Çekmece adı</label>
+                    <div class="form-group mt-1 mb-3">
+                        <input class="form-control" 
+                        type="text" id="drawerName"
+                        formControlName="drawerName"                       
+                        />
+                    </div>                      
+                    <label for="shelfId">Raf</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="shelfId">                       
+                        <option  [ngValue]="shelf.id" *ngFor="let shelf of shelves">{{shelf.shelfName}}</option>                                                                    
+                    </select>                   
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" routerLink="/drawers" (click)="addDrawer()">Rafı Ekle</button>
+            </div>
+        </div>
+    </div>   
+</div>
+
+
