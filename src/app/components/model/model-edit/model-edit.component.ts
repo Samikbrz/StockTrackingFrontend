@@ -19,7 +19,8 @@ export class ModelEditComponent implements OnInit {
   brands:Brand[];  
   models:ModelDetail;
 
-  constructor(private toastrService:ToastrService,
+  constructor(
+    private toastrService:ToastrService,
     private modelService:ModelService,
     private brandService:BrandService,
     private activatedRoute: ActivatedRoute,

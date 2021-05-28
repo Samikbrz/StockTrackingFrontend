@@ -31,6 +31,7 @@ import { ModelAddComponent } from './components/model/model-add/model-add.compon
 import { ModelEditComponent } from './components/model/model-edit/model-edit.component';
 import { ShelfComponent } from './components/shelf/shelf.component';
 import { ShelfAddComponent } from './components/shelf/shelf-add/shelf-add.component';
+import { ShelfEditComponent } from './components/shelf/shelf-edit/shelf-edit.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ShelfAddComponent } from './components/shelf/shelf-add/shelf-add.compon
     ModelAddComponent,
     ModelEditComponent,
     ShelfComponent,
-    ShelfAddComponent,   
+    ShelfAddComponent,
+    ShelfEditComponent,   
   ],
   imports: [
     BrowserModule,
