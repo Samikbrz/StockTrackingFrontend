@@ -5,6 +5,8 @@
             <th>Tarih</th>
             <th>Şirket</th>
             <th>Kullanıcı Adı</th>
+            <th>Güncelle</th>  
+            <th>Sil</th>  
         </tr>
     </thead>
     <tbody>
@@ -13,7 +15,14 @@
             <td>{{proposal.date |date}}</td>
             <td>{{proposal.companyName}}</td>
             <td>{{proposal.userName}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/proposal/update/{{proposal.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+            </td>           
         </tr>
+        <button type="button" class="btn btn-success mt-2" routerLink="/proposal/add">Yeni Teklif Oluştur</button>        
     </tbody>   
 </table>
 
