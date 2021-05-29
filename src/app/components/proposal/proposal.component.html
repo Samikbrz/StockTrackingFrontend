@@ -1,16 +1,27 @@
-<table class="table table-striped table-dark mt-2">
-    <thead>
+<table class="table table-striped table-dark mt-3">
+    <thead class="thead-light">
         <tr>            
-            <th>Proposal No</th>
-            <th>Date</th>
-            <th>User Name</th>
+            <th>Teklif Numarası</th>
+            <th>Tarih</th>
+            <th>Şirket</th>
+            <th>Kullanıcı Adı</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let proposal of proposals">            
             <td>{{proposal.proposalNo}}</td>
-            <td>{{proposal.date}}</td>
+            <td>{{proposal.date |date}}</td>
+            <td>{{proposal.companyName}}</td>
             <td>{{proposal.userName}}</td>
         </tr>
-    </tbody>    
+    </tbody>   
 </table>
+
+
+
+
+
+
+
+
+

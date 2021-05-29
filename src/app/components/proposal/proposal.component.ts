@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Proposal } from 'src/app/models/proposal';
+import { ProposalDetail } from 'src/app/models/proposalDetail';
 import { ProposalService } from 'src/app/services/proposal.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProposalService } from 'src/app/services/proposal.service';
 })
 export class ProposalComponent implements OnInit {
 
-  proposals:Proposal[]=[];
+  proposals:ProposalDetail[];
 
   constructor(private proposalService:ProposalService) { }
 

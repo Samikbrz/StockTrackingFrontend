@@ -1,6 +1,7 @@
 export interface Proposal{
     id:number;
-    proposalNo:Date;
-    date:String;
-    userName:number;
+    proposalNo:String;
+    date:Date;
+    userId:number;
+    companyId:number;
 }
