@@ -19,8 +19,8 @@ export class ProposalService {
     return this.httpClient.get<ListResponseModel<ProposalDetail>>(newPath);     
   }
 
-  getProposalById(modelId:number):Observable<ListResponseModel<ProposalDetail>>{
-    let newPath=this.apiUrl+"/proposal/getbyid?id="+modelId;
+  getProposalById(proposalId:number):Observable<ListResponseModel<ProposalDetail>>{
+    let newPath=this.apiUrl+"/proposal/getbyid?id="+proposalId;
     return this.httpClient.get<ListResponseModel<ProposalDetail>>(newPath);
   }
 
