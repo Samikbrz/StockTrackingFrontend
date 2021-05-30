@@ -16,6 +16,7 @@ import { ModelComponent } from './components/model/model.component';
 import { ProductUnitAddComponent } from './components/product-unit/product-unit-add/product-unit-add.component';
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
 import { ProductUnitComponent } from './components/product-unit/product-unit.component';
+import { ProposalAddComponent } from './components/proposal/proposal-add/proposal-add.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { ShelfAddComponent } from './components/shelf/shelf-add/shelf-add.component';
 import { ShelfEditComponent } from './components/shelf/shelf-edit/shelf-edit.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path:"productunits/add",component:ProductUnitAddComponent},
   {path:"productunit/update/:productUnitId",component:ProductUnitEditComponent},
   {path:"exchangerate",component:ExchangeRateComponent},
-  {path:"proposals",component:ProposalComponent},  
+  {path:"proposals",component:ProposalComponent}, 
+  {path:"proposal/add",component:ProposalAddComponent}, 
   {path:"brands",component:BrandComponent},
   {path:"brand/add",component:BrandAddComponent},
   {path:"brand/update/:brandId",component:BrandEditComponent},
@@ -48,7 +50,7 @@ const routes: Routes = [
   {path:"shelf/update/:shelfId",component:ShelfEditComponent},
   {path:"drawers",component:DrawerComponent},
   {path:"drawer/add",component:DrawerAddComponent},
-  {path:"drawer/update/:drawerId",component:DrawerEditComponent},
+  {path:"drawer/update/:drawerId",component:DrawerEditComponent},  
 ];
 
 @NgModule({

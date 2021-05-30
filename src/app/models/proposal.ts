@@ -1,6 +1,6 @@
 export interface Proposal{
     id:number;
-    proposalNo:String;
+    proposalNo:number;
     date:Date;
     userId:number;
     companyId:number;
