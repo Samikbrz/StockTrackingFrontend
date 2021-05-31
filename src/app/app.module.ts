@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
@@ -38,6 +38,7 @@ import { DrawerEditComponent } from './components/drawer/drawer-edit/drawer-edit
 import { ProposalAddComponent } from './components/proposal/proposal-add/proposal-add.component';
 import { ProposalEditComponent } from './components/proposal/proposal-edit/proposal-edit.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { LoginComponent } from './components/login/login.component';
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
