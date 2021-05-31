@@ -37,6 +37,7 @@ import { DrawerAddComponent } from './components/drawer/drawer-add/drawer-add.co
 import { DrawerEditComponent } from './components/drawer/drawer-edit/drawer-edit.component';
 import { ProposalAddComponent } from './components/proposal/proposal-add/proposal-add.component';
 import { ProposalEditComponent } from './components/proposal/proposal-edit/proposal-edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ProposalEditComponent } from './components/proposal/proposal-edit/propo
     DrawerAddComponent,
     DrawerEditComponent,
     ProposalAddComponent,
-    ProposalEditComponent,   
+    ProposalEditComponent,
+    LoginComponent,   
   ],
   imports: [
     BrowserModule,

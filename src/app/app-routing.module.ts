@@ -10,6 +10,7 @@ import { DrawerAddComponent } from './components/drawer/drawer-add/drawer-add.co
 import { DrawerEditComponent } from './components/drawer/drawer-edit/drawer-edit.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
+import { LoginComponent } from './components/login/login.component';
 import { ModelAddComponent } from './components/model/model-add/model-add.component';
 import { ModelEditComponent } from './components/model/model-edit/model-edit.component';
 import { ModelComponent } from './components/model/model.component';
@@ -27,7 +28,7 @@ import { StoreEditComponent } from './components/store/store-edit/store-edit.com
 import { StoreComponent } from './components/store/store.component';
 
 const routes: Routes = [  
-  {path:"",component:ProductUnitComponent},
+  {path:"",component:LoginComponent},
   {path:"productunits",component:ProductUnitComponent},
   {path:"productunits/add",component:ProductUnitAddComponent},
   {path:"productunit/update/:productUnitId",component:ProductUnitEditComponent},
