@@ -4,7 +4,7 @@ import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
-import { LoginModel } from './loginModel';
+import { LoginModel } from '../models/loginModel';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class AuthService {
 
   isAuthenticated(){
     if(localStorage.getItem("token")){
-      return true;
+      return true;      
     }
     else{
       return false;
