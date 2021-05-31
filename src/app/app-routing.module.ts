@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ModelAddComponent } from './components/model/model-add/model-add.component';
 import { ModelEditComponent } from './components/model/model-edit/model-edit.component';
 import { ModelComponent } from './components/model/model.component';
+import { ProductAcceptanceComponent } from './components/product-acceptance/product-acceptance.component';
 import { ProductUnitAddComponent } from './components/product-unit/product-unit-add/product-unit-add.component';
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
 import { ProductUnitComponent } from './components/product-unit/product-unit.component';
@@ -30,9 +31,10 @@ import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [  
   {path:"",pathMatch:"full",component:LoginComponent},
-  {path:"productunits",component:ProductUnitComponent,canActivate:[LoginGuard]},
+  {path:"productunits",component:ProductUnitComponent,canActivate:[LoginGuard]},  
   {path:"productunits/add",component:ProductUnitAddComponent,canActivate:[LoginGuard]},
   {path:"productunit/update/:productUnitId",component:ProductUnitEditComponent,canActivate:[LoginGuard]},
+  {path:"productacceptances",component:ProductAcceptanceComponent,canActivate:[LoginGuard]},
   {path:"exchangerate",component:ExchangeRateComponent,canActivate:[LoginGuard]},
   {path:"proposals",component:ProposalComponent,canActivate:[LoginGuard]}, 
   {path:"proposal/add",component:ProposalAddComponent,canActivate:[LoginGuard]}, 

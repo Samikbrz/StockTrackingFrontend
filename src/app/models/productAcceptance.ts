@@ -1,6 +1,6 @@
 export interface ProductAcceptance{
     id:number;
-    productResgistrationNumber:String;
+    productRegistrationNumber:string;
     acceptanceDate:Date;
     userId:number;    
     companyId:Number;

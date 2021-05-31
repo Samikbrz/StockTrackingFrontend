@@ -39,6 +39,7 @@ import { ProposalAddComponent } from './components/proposal/proposal-add/proposa
 import { ProposalEditComponent } from './components/proposal/proposal-edit/proposal-edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ProductAcceptanceComponent } from './components/product-acceptance/product-acceptance.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     DrawerEditComponent,
     ProposalAddComponent,
     ProposalEditComponent,
-    LoginComponent,   
+    LoginComponent,
+    ProductAcceptanceComponent,   
   ],
   imports: [
     BrowserModule,
