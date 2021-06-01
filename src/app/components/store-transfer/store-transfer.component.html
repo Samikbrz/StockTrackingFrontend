@@ -1,0 +1,37 @@
+<table class="table table-striped table-dark mt-3">
+    <thead class="thead-light">
+        <tr>            
+            <th>Depo Transfer Numarası</th>
+            <th>Tarih</th>
+            <th>Kaynak Depo</th>
+            <th>Kaynak Raf</th>
+            <th>Kaynak Çekmece</th>
+            <th>Hedef Depo</th>
+            <th>Hedef Raf</th>
+            <th>Hedef Çekmece</th>
+            <th>Kullanıcı</th>
+            <th>Güncelle</th>  
+            <th>Sil</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let storeTransfer of storeTransfers">            
+            <td>{{storeTransfer.transferNo}}</td>
+            <td>{{storeTransfer.date |date}}</td>
+            <td>{{storeTransfer.sourceStoreName}}</td>
+            <td>{{storeTransfer.sourceShelfName}}</td>
+            <td>{{storeTransfer.sourceDrawerName}}</td>
+            <td>{{storeTransfer.targetStoreName}}</td>
+            <td>{{storeTransfer.targetShelfName}}</td>
+            <td>{{storeTransfer.targetDrawerName}}</td>
+            <td>{{storeTransfer.userName}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/storeTransfer/update/{{storeTransfer.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+            </td>           
+        </tr>
+        <button type="button" class="btn btn-success mt-2" routerLink="/storeTransfer/add">Yeni Teklif Oluştur</button>        
+    </tbody>   
+</table>

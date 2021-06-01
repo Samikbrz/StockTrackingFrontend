@@ -1,6 +1,6 @@
 export interface StoreTransfer{
     id:number;
-    storeTransferNo:number;
+    transferNo:string;
     date:Date;
     sourceStoreId:number;
     sourceShelfId:number;

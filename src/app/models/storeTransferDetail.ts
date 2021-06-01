@@ -4,8 +4,8 @@ export interface StoreTransferDetail extends StoreTransfer{
     sourceStoreName:string;
     sourceShelfName:string;
     sourceDrawerName:string;
-    TargetStoreName:string;
-    TargetShelfName:string;
-    TargetDrawerName:string;
-    UserName:string;
+    targetStoreName:string;
+    targetShelfName:string;
+    targetDrawerName:string;
+    userName:string;
 }
