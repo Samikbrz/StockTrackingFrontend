@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginModel } from 'src/app/models/loginModel';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-navi',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NaviComponent implements OnInit {
 
-  constructor() { }
+  user:string;  
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.getUser();
+  }
+
+  getUser(){    
+    var arr=JSON.parse(localStorage.getItem('user')); 
+    arr.forEach((element: { firstName: string; }) => {
+      this.user=element.firstName
+    });
+  }
+
+  logout(){
+    localStorage.removeItem("token")
+    localStorage.removeItem("user")
+    this.router.navigate([""]);
   }
 
 }
