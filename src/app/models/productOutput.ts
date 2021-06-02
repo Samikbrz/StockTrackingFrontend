@@ -1,7 +1,7 @@
 export interface ProductOutput{
     id:number;
     exitNumber:string;
-    data:Date;
+    date:Date;
     totalPrice:number;
     userId:string;
     companyId:number

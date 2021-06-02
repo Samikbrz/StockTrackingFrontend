@@ -42,6 +42,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ProductAcceptanceComponent } from './components/product-acceptance/product-acceptance.component';
 import { StoreTransferComponent } from './components/store-transfer/store-transfer.component';
 import { StoreTransferAddComponent } from './components/store-transfer/store-transfer-add/store-transfer-add.component';
+import { ProductOutputComponent } from './components/product-output/product-output.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { StoreTransferAddComponent } from './components/store-transfer/store-tra
     LoginComponent,
     ProductAcceptanceComponent,
     StoreTransferComponent,
-    StoreTransferAddComponent,   
+    StoreTransferAddComponent,
+    ProductOutputComponent,   
   ],
   imports: [
     BrowserModule,

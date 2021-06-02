@@ -1,0 +1,29 @@
+<table class="table table-striped table-dark mt-3">
+    <thead class="thead-light">
+        <tr>            
+            <th>Ürün Çıkış Numarası</th>
+            <th>Tarih</th>
+            <th>Toplam Fiyat</th>
+            <th>Şirket</th>
+            <th>Kullanıcı Adı</th>
+            <th>Güncelle</th>  
+            <th>Sil</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let productOutput of productOutputs">            
+            <td>{{productOutput.exitNumber}}</td>
+            <td>{{productOutput.date |date}}</td>
+            <td>{{productOutput.totalPrice | currency:"TRY":"₺ ":"" }}</td>            
+            <td>{{productOutput.companyName}}</td>
+            <td>{{productOutput.userName}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/productoutput/update/{{productOutput.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+            </td>           
+        </tr>
+        <button type="button" class="btn btn-success mt-2" routerLink="/productOutput/add">Yeni Ürün Çıkışı Oluştur</button>        
+    </tbody>   
+</table>
