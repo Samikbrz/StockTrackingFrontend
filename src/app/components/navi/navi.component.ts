@@ -20,7 +20,7 @@ export class NaviComponent implements OnInit {
   getUser(){    
     var arr=JSON.parse(localStorage.getItem('user')); 
     arr.forEach((element: { firstName: string; }) => {
-      this.user=element.firstName
+      this.user=element.firstName      
     });
   }
 

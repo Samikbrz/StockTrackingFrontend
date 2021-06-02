@@ -1,8 +1,8 @@
 export interface ProductOutput{
-    id:Number;
-    exitNumber:String;
-    dataTime:Date;
-    totalPrice:Number;
-    userName:String;
-    companyId:Number
+    id:number;
+    exitNumber:string;
+    data:Date;
+    totalPrice:number;
+    userId:string;
+    companyId:number
 }

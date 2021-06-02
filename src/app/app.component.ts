@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stocktracking';
+
+  checkToPage(){
+    if(window.location.pathname===""){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
   
 }
