@@ -1,6 +1,6 @@
 export interface StockStore{
     id:number;
-    productName:string;
+    productAcceptanceId:string;
     unitPrice:number;
     currency:string;
     barcode:string;

@@ -25,6 +25,7 @@ import { ProposalComponent } from './components/proposal/proposal.component';
 import { ShelfAddComponent } from './components/shelf/shelf-add/shelf-add.component';
 import { ShelfEditComponent } from './components/shelf/shelf-edit/shelf-edit.component';
 import { ShelfComponent } from './components/shelf/shelf.component';
+import { StockStoreComponent } from './components/stock-store/stock-store.component';
 import { StoreTransferAddComponent } from './components/store-transfer/store-transfer-add/store-transfer-add.component';
 import { StoreTransferComponent } from './components/store-transfer/store-transfer.component';
 import { StoreAddComponent } from './components/store/store-add/store-add.component';
@@ -63,6 +64,7 @@ const routes: Routes = [
   {path:"drawer/update/:drawerId",component:DrawerEditComponent,canActivate:[LoginGuard]},
   {path:"storetransfers",component:StoreTransferComponent,canActivate:[LoginGuard]},
   {path:"storetransfers/add",component:StoreTransferAddComponent,canActivate:[LoginGuard]},  
+  {path:"stockstores",component:StockStoreComponent,canActivate:[LoginGuard]},
 ];
 
 @NgModule({

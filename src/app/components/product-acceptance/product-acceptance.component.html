@@ -2,6 +2,10 @@
     <thead class="thead-light">
         <tr>            
             <th>Ürün Kabul Numarası</th>
+            <th>Ürün Adı</th>
+            <th>Adedi</th>
+            <th>Birim Fiyatı</th>
+            <th>Toplam Fiyat</th>
             <th>Kabul tarihi</th>
             <th>Şirket</th>
             <th>Kullanıcı Adı</th>
@@ -12,6 +16,10 @@
     <tbody>
         <tr *ngFor="let productAcceptance of productAcceptances">            
             <td>{{productAcceptance.productRegistrationNumber}}</td>
+            <td>{{productAcceptance.productName}}</td>
+            <td>{{productAcceptance.count}}</td>
+            <td>{{productAcceptance.unitPrice |currency:"TRY":"₺":""}}</td>
+            <td>{{productAcceptance.totalPrice  |currency:"TRY":"₺":""}}</td>
             <td>{{productAcceptance.acceptanceDate |date}}</td>
             <td>{{productAcceptance.companyName}}</td>
             <td>{{productAcceptance.userName}}</td>
@@ -22,7 +30,7 @@
                 <button type="button" class="btn btn-danger  ml-2" >Sil</button>
             </td>           
         </tr>
-        <button type="button" class="btn btn-success mt-2" routerLink="/productacceptance/add" >Yeni Ürün Kabul Oluştur</button>        
+        <button type="button" class="btn btn-success mt-2" routerLink="/productacceptance/add" >Ürün Kabul Ekle</button>        
     </tbody>   
 </table>
 
