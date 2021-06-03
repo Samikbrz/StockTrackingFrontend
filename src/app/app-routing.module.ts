@@ -33,11 +33,13 @@ import { StoreTransferComponent } from './components/store-transfer/store-transf
 import { StoreAddComponent } from './components/store/store-add/store-add.component';
 import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
 import { StoreComponent } from './components/store/store.component';
+import { UserComponent } from './components/user/user.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [  
   {path:"",pathMatch:"full",component:LoginComponent},
   {path:"homepage",component:HomepageComponent,canActivate:[LoginGuard]},  
+  {path:"users",component:UserComponent,canActivate:[LoginGuard]},
   {path:"productunits",component:ProductUnitComponent,canActivate:[LoginGuard]},  
   {path:"productunits/add",component:ProductUnitAddComponent,canActivate:[LoginGuard]},
   {path:"productunit/update/:productUnitId",component:ProductUnitEditComponent,canActivate:[LoginGuard]},
