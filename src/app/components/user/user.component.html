@@ -3,7 +3,7 @@
         <tr>            
             <th>Ad</th>
             <th>Soyad</th>
-            <th>Email</th>            
+            <th>Email</th>                        
             <th>Güncelle</th>  
             <th>Sil</th>  
         </tr>
@@ -12,7 +12,7 @@
         <tr *ngFor="let user of users">            
             <td>{{user.firstName}}</td>
             <td>{{user.lastName}}</td>
-            <td>{{user.email}}</td>            
+            <td>{{user.email}}</td>                        
             <td>
                 <button type="button" class="btn btn-primary" routerLink="/user/update/{{user.id}}" >Güncelle</button>                
             </td> 
@@ -20,7 +20,7 @@
                 <button type="button" class="btn btn-danger  ml-2" >Sil</button>
             </td>           
         </tr>
-        <button type="button" class="btn btn-success mt-2" routerLink="/user/add">Yeni Kullanıcı Oluştur</button>        
+        <button type="button" class="btn btn-success mt-2 shadow" routerLink="/user/add">Yeni Kullanıcı Oluştur</button>        
     </tbody>   
 </table>
 
