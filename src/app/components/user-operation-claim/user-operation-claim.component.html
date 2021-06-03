@@ -1,0 +1,33 @@
+<table class="table table-striped table-dark mt-3">
+    <thead class="thead-light">
+        <tr>            
+            <th>Kullanıcı</th>
+            <th>Yetki</th>                                    
+            <th>Güncelle</th>  
+            <th>Sil</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let userOperationClaim of userOperationClaims">            
+            <td>{{userOperationClaim.userName}}</td>
+            <td>{{userOperationClaim.operationClaimName}}</td>                                  
+            <td>
+                <button type="button" class="btn btn-primary" routerLink="/useroperationolaim/update/{{userOperationClaim.id}}" >Güncelle</button>                
+            </td> 
+            <td>                
+                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+            </td>           
+        </tr>
+        <button type="button" class="btn btn-success mt-2 shadow" routerLink="/useroperationolaim/add">Kullanıcı ve Yetki Ekle</button>        
+    </tbody>   
+</table>
+
+
+
+
+
+
+
+
+
+

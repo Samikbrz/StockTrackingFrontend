@@ -47,6 +47,7 @@ import { StockStoreComponent } from './components/stock-store/stock-store.compon
 import { ProductAcceptanceAddComponent } from './components/product-acceptance/product-acceptance-add/product-acceptance-add.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { UserComponent } from './components/user/user.component';
+import { UserOperationClaimComponent } from './components/user-operation-claim/user-operation-claim.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { UserComponent } from './components/user/user.component';
     StockStoreComponent,
     ProductAcceptanceAddComponent,
     HomepageComponent,
-    UserComponent,   
+    UserComponent,
+    UserOperationClaimComponent,   
   ],
   imports: [
     BrowserModule,
