@@ -14,7 +14,7 @@ export class OperationClaimService {
   constructor(private httpClient:HttpClient) { }
 
   getOperationClaims():Observable<ListResponseModel<OperationClaim>>{
-    let newPath=this.apiUrl+"/operationclaim/getalldetail";
+    let newPath=this.apiUrl+"/operationclaim/getall";
     return this.httpClient.get<ListResponseModel<OperationClaim>>(newPath);
   }
 

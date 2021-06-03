@@ -48,6 +48,7 @@ import { ProductAcceptanceAddComponent } from './components/product-acceptance/p
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { UserComponent } from './components/user/user.component';
 import { UserOperationClaimComponent } from './components/user-operation-claim/user-operation-claim.component';
+import { OperationClaimComponent } from './components/operation-claim/operation-claim.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { UserOperationClaimComponent } from './components/user-operation-claim/u
     ProductAcceptanceAddComponent,
     HomepageComponent,
     UserComponent,
-    UserOperationClaimComponent,   
+    UserOperationClaimComponent,
+    OperationClaimComponent,   
   ],
   imports: [
     BrowserModule,
