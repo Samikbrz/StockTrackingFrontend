@@ -9,7 +9,7 @@ import { ProductUnitService } from 'src/app/services/product-unit.service';
   styleUrls: ['./product-unit.component.css'],
 })
 export class ProductUnitComponent implements OnInit {
-  items: any = [];
+  
   pageOfItems: Array<any>;
   products: ProductUnit[] = []; 
   selectedProductUnit:ProductUnit=null;
@@ -18,13 +18,13 @@ export class ProductUnitComponent implements OnInit {
   constructor(private productUnitService:ProductUnitService, private toastrService:ToastrService) {}
 
   ngOnInit(): void {
-    this.getProductUnits(); 
-    this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));      
+    this.getProductUnits();          
   }
 
   getProductUnits() {
     this.productUnitService.getProductUnits().subscribe(response=>{
-      this.products=response.data      
+      this.products=response.data    
+      this.toastrService.success(response.message,"Başarılı");  
     })
   }
 

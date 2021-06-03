@@ -45,6 +45,7 @@ import { StoreTransferAddComponent } from './components/store-transfer/store-tra
 import { ProductOutputComponent } from './components/product-output/product-output.component';
 import { StockStoreComponent } from './components/stock-store/stock-store.component';
 import { ProductAcceptanceAddComponent } from './components/product-acceptance/product-acceptance-add/product-acceptance-add.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ProductAcceptanceAddComponent } from './components/product-acceptance/p
     StoreTransferAddComponent,
     ProductOutputComponent,
     StockStoreComponent,
-    ProductAcceptanceAddComponent,   
+    ProductAcceptanceAddComponent,
+    HomepageComponent,   
   ],
   imports: [
     BrowserModule,

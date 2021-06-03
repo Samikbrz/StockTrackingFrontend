@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { StockStoreDetail } from 'src/app/models/stockStoreDetail';
 import { StockStoreService } from 'src/app/services/stock-store.service';
 
@@ -11,7 +12,8 @@ export class StockStoreComponent implements OnInit {
 
   stockStores:StockStoreDetail[];
 
-  constructor(private stockStoreService:StockStoreService) { }
+  constructor(private stockStoreService:StockStoreService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getStockStores();
@@ -19,7 +21,8 @@ export class StockStoreComponent implements OnInit {
 
   getStockStores() {
     this.stockStoreService.getStockStores().subscribe(response=>{
-      this.stockStores=response.data
+      this.stockStores=response.data;
+      this.toastrService.success(response.message,"Başarılı");
     })
   }
 

@@ -22,6 +22,7 @@ export class CompanyComponent implements OnInit {
   getCompanies(){
     this.companyService.getCompanies().subscribe(response=>{
       this.companies=response.data
+      this.toastrService.success(response.message,"Başarılı");
     })
   }
 

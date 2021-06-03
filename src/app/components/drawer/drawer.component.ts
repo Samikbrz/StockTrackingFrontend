@@ -24,6 +24,7 @@ export class DrawerComponent implements OnInit {
   getDrawers(){
     this.drawerService.getDrawers().subscribe(response=>{
       this.drawers=response.data
+      this.toastrService.success(response.message,"Başarılı");
     })
   }  
 

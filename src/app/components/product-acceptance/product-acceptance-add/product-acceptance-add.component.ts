@@ -65,8 +65,9 @@ export class ProductAcceptanceAddComponent implements OnInit {
       let productAcceptanceModel = Object.assign({}, this.productAcceptanceAddForm.value);
       console.log(productAcceptanceModel);
       this.productAcceptanceService.add(productAcceptanceModel).subscribe((response)=>{
-        this.toastrService.success("Ürün kabül oluşturuldu","Başarılı");   
-        window.location.reload();     
+        this.toastrService.success(response.message,"Başarılı");   
+        window.location.reload(); 
+        this.toastrService.info("Depo stok dağılımına ilgili ürünü yerleştirmeyi unutmayınız!","Bilgilendirme");    
       },(responseError)=>{        
         this.toastrService.error(responseError.error.message,"Hata");
       });      

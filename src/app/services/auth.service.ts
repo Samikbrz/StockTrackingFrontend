@@ -26,8 +26,7 @@ export class AuthService {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath,loginModel);
   }
 
-  getByEmail(email:string):Observable<ListResponseModel<User>>{
-    console.log(email)
+  getByEmail(email:string):Observable<ListResponseModel<User>>{    
     let newPath=this.apiUrl+"/getbyemail?email="+email;
     return this.httpClient.get<ListResponseModel<User>>(newPath);
   }

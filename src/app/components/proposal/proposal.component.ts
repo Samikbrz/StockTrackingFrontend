@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProposalDetail } from 'src/app/models/proposalDetail';
 import { ProposalService } from 'src/app/services/proposal.service';
 
@@ -11,7 +12,8 @@ export class ProposalComponent implements OnInit {
 
   proposals:ProposalDetail[];
 
-  constructor(private proposalService:ProposalService) { }
+  constructor(private proposalService:ProposalService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getProposals();
@@ -19,7 +21,8 @@ export class ProposalComponent implements OnInit {
 
   getProposals() {
     this.proposalService.getProposals().subscribe(response=>{
-      this.proposals=response.data
+      this.proposals=response.data;
+      this.toastrService.success(response.message,"Başarılı");
     })
   }
 

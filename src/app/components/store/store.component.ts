@@ -23,7 +23,8 @@ export class StoreComponent implements OnInit {
 
   getStores(){
     this.storeService.getStores().subscribe(response=>{
-      this.stores=response.data
+      this.stores=response.data;
+      this.toastrService.success(response.message,"Başarılı");
     })
   }
 

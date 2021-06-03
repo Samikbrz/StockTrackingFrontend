@@ -22,7 +22,8 @@ export class ShelfComponent implements OnInit {
 
   getShelves(){
     this.shelfService.getShelves().subscribe(response=>{
-      this.shelves=response.data
+      this.shelves=response.data;
+      this.toastrService.success(response.message,"Başarılı");
     })
   }  
 

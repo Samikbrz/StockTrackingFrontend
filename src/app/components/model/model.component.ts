@@ -21,7 +21,8 @@ export class ModelComponent implements OnInit {
 
   getModels(){
     this.modelService.getModels().subscribe(response=>{
-      this.models=response.data
+      this.models=response.data;
+      this.toastrService.success(response.message,"Başarılı");
     })
   }  
 
