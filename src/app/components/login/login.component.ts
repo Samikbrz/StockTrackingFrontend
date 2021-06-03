@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe(response=>{        
         this.toastrService.success("Giriş Baraşılı","Başarılı")        
         localStorage.setItem("token",response.data.token)
-        this.router.navigate(["/productunits"]);        
+        this.router.navigate(["/homepage"]);        
       },responseError=>{
         this.toastrService.error(responseError.error)
       })

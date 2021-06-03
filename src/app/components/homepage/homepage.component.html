@@ -1,1 +1,6 @@
-<p>homepage works!</p>
+<div class="alert alert-primary mt-3" role="alert">
+    Stok Takip Uygulamasına Hoşgeldiniz!
+</div>
+<div *ngIf="count>=60" class="alert alert-danger" role="alert">
+    Depo stok durumu {{count}}, kritik seviyeye(100) yaklaşmak üzere ürün kabul ederken dikkate alınız!
+</div>
