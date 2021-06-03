@@ -4,7 +4,7 @@ export interface ProductAcceptance{
     productRegistrationNumber:string;
     acceptanceDate:Date;
     userId:number;    
-    companyId:Number;
+    companyId:number;
     count:number;
     unitPrice:number;
     totalPrice:number;
