@@ -52,6 +52,7 @@ import { OperationClaimComponent } from './components/operation-claim/operation-
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { StockStoreAddComponent } from './components/stock-store/stock-store-add/stock-store-add.component';
 import { OperationClaimAddComponent } from './components/operation-claim/operation-claim-add/operation-claim-add.component';
+import { OperationClaimEditComponent } from './components/operation-claim/operation-claim-edit/operation-claim-edit.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { OperationClaimAddComponent } from './components/operation-claim/operati
     OperationClaimComponent,
     UserEditComponent,
     StockStoreAddComponent,
-    OperationClaimAddComponent,   
+    OperationClaimAddComponent,
+    OperationClaimEditComponent,   
   ],
   imports: [
     BrowserModule,
