@@ -45,7 +45,7 @@ export class BrandEditComponent implements OnInit {
       let brandModel = Object.assign({}, this.brandUpdateForm.value)      
       brandModel.id=this.brand.id;        
       this.brandService.update(brandModel).subscribe( response => {               
-          this.toastrService.success("Marka güncellendi",'Başarılı');  
+          this.toastrService.success(response.message,'Başarılı');  
           window.location.reload();                                     
         },responseError => {
           this.toastrService.error(responseError.messaage , "Hata")

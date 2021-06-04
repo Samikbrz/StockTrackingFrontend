@@ -53,6 +53,7 @@ import { UserEditComponent } from './components/user/user-edit/user-edit.compone
 import { StockStoreAddComponent } from './components/stock-store/stock-store-add/stock-store-add.component';
 import { OperationClaimAddComponent } from './components/operation-claim/operation-claim-add/operation-claim-add.component';
 import { OperationClaimEditComponent } from './components/operation-claim/operation-claim-edit/operation-claim-edit.component';
+import { ProductAcceptanceEditComponent } from './components/product-acceptance/product-acceptance-edit/product-acceptance-edit.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { OperationClaimEditComponent } from './components/operation-claim/operat
     UserEditComponent,
     StockStoreAddComponent,
     OperationClaimAddComponent,
-    OperationClaimEditComponent,   
+    OperationClaimEditComponent,
+    ProductAcceptanceEditComponent,   
   ],
   imports: [
     BrowserModule,

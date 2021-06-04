@@ -56,7 +56,8 @@ export class ProductAcceptanceAddComponent implements OnInit {
       totalPrice:['',Validators.required],
       acceptanceDate:['',Validators.required],
       userId:['',Validators.required],
-      companyId:['',Validators.required]               
+      companyId:['',Validators.required],
+      barcode:['',Validators.required],               
     });   
   }
 
