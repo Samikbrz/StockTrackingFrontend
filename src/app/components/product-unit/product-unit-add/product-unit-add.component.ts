@@ -31,7 +31,7 @@ export class ProductUnitAddComponent implements OnInit {
     if (this.productUnitAddForm.valid) {
       let productModel = Object.assign({}, this.productUnitAddForm.value);
       this.productUnitService.add(productModel).subscribe((response)=>{
-        this.toastrService.success("Ürün birimi eklendi.","Başarılı");  
+        this.toastrService.success(response.message,"Başarılı");  
         window.location.reload();      
       },(responseError)=>{    
         this.toastrService.error(responseError.error.message)

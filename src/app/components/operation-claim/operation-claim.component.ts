@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { OperationClaim } from 'src/app/models/operationClaim';
 import { OperationClaimService } from 'src/app/services/operation-claim.service';
 
@@ -10,7 +11,8 @@ import { OperationClaimService } from 'src/app/services/operation-claim.service'
 export class OperationClaimComponent implements OnInit {
 
   operationClaims:OperationClaim[];
-  constructor(private operationClaimService:OperationClaimService) { }
+  constructor(private operationClaimService:OperationClaimService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getOperationClaims();
@@ -20,5 +22,14 @@ export class OperationClaimComponent implements OnInit {
     this.operationClaimService.getOperationClaims().subscribe(response=>{
       this.operationClaims=response.data;
     })
+  }
+
+  deleteOperationClaim(operaitonClaim:OperationClaim){
+    if(window.confirm("Emin misiniz?")){
+      this.operationClaimService.delete(operaitonClaim).subscribe(response=>{
+        this.toastrService.success(response.message,"Deleted")
+        window.location.reload();
+      })
+    }    
   }
 }

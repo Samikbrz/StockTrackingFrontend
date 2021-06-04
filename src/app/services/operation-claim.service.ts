@@ -19,7 +19,7 @@ export class OperationClaimService {
   }
 
   getOperationClaimById(modelId:number):Observable<ListResponseModel<OperationClaim>>{
-    let newPath=this.apiUrl+"/operationclaim/getmodelbyid?id="+modelId;
+    let newPath=this.apiUrl+"/operationclaim/getbyid?id="+modelId;
     return this.httpClient.get<ListResponseModel<OperationClaim>>(newPath);
   }
 
