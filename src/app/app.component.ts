@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'stocktracking';
 
   checkToPage(){
-    if(window.location.pathname===""){
+    if(window.location.pathname==="/"){
       return true;
     }
     else{

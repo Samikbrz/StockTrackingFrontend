@@ -35,6 +35,7 @@ import { StoreAddComponent } from './components/store/store-add/store-add.compon
 import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
 import { StoreComponent } from './components/store/store.component';
 import { UserOperationClaimComponent } from './components/user-operation-claim/user-operation-claim.component';
+import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { UserComponent } from './components/user/user.component';
 import { LoginGuard } from './guards/login.guard';
 
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path:"",pathMatch:"full",component:LoginComponent},
   {path:"homepage",component:HomepageComponent,canActivate:[LoginGuard]},  
   {path:"users",component:UserComponent,canActivate:[LoginGuard]},
+  {path:"user/update/:id",component:UserEditComponent,canActivate:[LoginGuard]},
   {path:"useroperationclaims",component:UserOperationClaimComponent,canActivate:[LoginGuard]},
   {path:"operationclaims",component:OperationClaimComponent,canActivate:[LoginGuard]},
   {path:"productunits",component:ProductUnitComponent,canActivate:[LoginGuard]},  

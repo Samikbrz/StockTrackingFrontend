@@ -23,6 +23,11 @@ export class UserService {
     return this.httpClient.get<ListResponseModel<User>>(newPath);
   }
 
+  getUserByEmail(email:string):Observable<ListResponseModel<User>>{
+    let newPath=this.apiUrl+'/user/getbyemail?email='+email;
+    return this.httpClient.get<ListResponseModel<User>>(newPath);
+  }
+
   add(user:User):Observable<ResponseModel>{
     let newPath=this.apiUrl+"/user/add";
     return this.httpClient.post<ResponseModel>(newPath,user);
