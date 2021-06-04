@@ -1,6 +1,7 @@
 export interface ProductAcceptance{
     id:number;
     productName:string;
+    barcode:string
     productRegistrationNumber:string;
     acceptanceDate:Date;
     userId:number;    

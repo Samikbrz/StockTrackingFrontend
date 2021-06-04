@@ -50,6 +50,7 @@ import { UserComponent } from './components/user/user.component';
 import { UserOperationClaimComponent } from './components/user-operation-claim/user-operation-claim.component';
 import { OperationClaimComponent } from './components/operation-claim/operation-claim.component';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
+import { StockStoreAddComponent } from './components/stock-store/stock-store-add/stock-store-add.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { UserEditComponent } from './components/user/user-edit/user-edit.compone
     UserComponent,
     UserOperationClaimComponent,
     OperationClaimComponent,
-    UserEditComponent,   
+    UserEditComponent,
+    StockStoreAddComponent,   
   ],
   imports: [
     BrowserModule,

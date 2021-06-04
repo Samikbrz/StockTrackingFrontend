@@ -3,6 +3,7 @@
         <tr>            
             <th>Ürün Kabul Numarası</th>
             <th>Ürün Adı</th>
+            <th>Barkod</th>
             <th>Adedi</th>
             <th>Birim Fiyatı</th>
             <th>Toplam Fiyat</th>
@@ -17,6 +18,7 @@
         <tr *ngFor="let productAcceptance of productAcceptances">            
             <td>{{productAcceptance.productRegistrationNumber}}</td>
             <td>{{productAcceptance.productName}}</td>
+            <td>{{productAcceptance.barcode}}</td>
             <td>{{productAcceptance.count}}</td>
             <td>{{productAcceptance.unitPrice |currency:"TRY":"₺":""}}</td>
             <td>{{productAcceptance.totalPrice  |currency:"TRY":"₺":""}}</td>
