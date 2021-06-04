@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       let loginModel=Object.assign({}, this.loginForm.value)
       this.authService.login(loginModel).subscribe(response=>{        
-        this.toastrService.success("Giriş Baraşılı","Başarılı")        
+        this.toastrService.success("Giriş Başarılı","Başarılı")        
         localStorage.setItem("token",response.data.token)
         this.router.navigate(["/homepage"]);        
       },responseError=>{

@@ -11,6 +11,7 @@ import { StockStoreService } from 'src/app/services/stock-store.service';
 export class StockStoreComponent implements OnInit {
 
   stockStores:StockStoreDetail[];
+  filterText="";
 
   constructor(private stockStoreService:StockStoreService,
     private toastrService:ToastrService) { }

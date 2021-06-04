@@ -25,8 +25,7 @@ export class StockStoreAddComponent implements OnInit {
   productAcceptance:ProductAcceptanceDetail;
   stores:Store[];
   shelves:Shelf[];
-  drawers:Drawer[];
-  selectedValue:number=1;
+  drawers:Drawer[];  
 
   stockStoreAddForm:FormGroup;    
 
@@ -66,7 +65,7 @@ export class StockStoreAddComponent implements OnInit {
 
   selectChangeHandler (event: any) {
     console.log(event.target.value);
-    this.getInformations(3)
+    this.getInformations(event.target.value);
   }
 
   getProductUnits(){
