@@ -2,8 +2,8 @@
     <thead class="thead-light">
         <tr>            
             <th>Ürün Adı</th>
-            <th>Birim Fiyatı</th>
-            <th>Para Birimi</th>
+            <th>Ürün Birimi Adı</th>
+            <th>Birim Fiyatı</th>            
             <th>Adet</th>
             <th>Barkod</th>
             <th>Depo Adı</th>            
@@ -16,8 +16,8 @@
     <tbody>
         <tr *ngFor="let stockStore of stockStores">            
             <td>{{stockStore.productName}}</td>
-            <td>{{stockStore.unitPrice}}</td>
-            <td>{{stockStore.currency}}</td> 
+            <td>{{stockStore.productUnitName}}</td>
+            <td>{{stockStore.unitPrice |currency:"TRY":"₺":""}}</td>             
             <td>{{stockStore.count}}</td>           
             <td>{{stockStore.barcode}}</td>
             <td>{{stockStore.storeName}}</td>

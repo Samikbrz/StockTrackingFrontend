@@ -5,4 +5,5 @@ export interface StockStoreDetail extends StockStore{
     storeName:string;
     shelfName:string;
     drawerName:string
+    productUnitName:string
 }

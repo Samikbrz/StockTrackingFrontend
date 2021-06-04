@@ -1,6 +1,6 @@
 <div class="mb-3  mt-3">
-    <label for="filterText" class="form-label">Ürün Ara</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün ismini yazınız">
+    <label for="filterText" class="form-label">Ürün birimi Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün birimi ismini yazınız">
 </div>
 <div *ngIf="filterText" class="alert alert-success">
     {{filterText}} aradınız.
@@ -8,7 +8,7 @@
 <table class="table table-striped table-dark mt-3">
     <thead class="thead-light">
         <tr>           
-            <th>Product Birimi Adı</th>
+            <th>Ürün Birimi Adı</th>
             <th>Güncelle</th>  
             <th>Sil</th>            
         </tr>

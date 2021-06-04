@@ -7,5 +7,6 @@ export interface StockStore{
     storeId:number;
     shelfId:number;
     drawerId:number;
+    productUnitId:number;
     count:number;
 }
