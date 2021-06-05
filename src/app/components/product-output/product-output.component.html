@@ -2,7 +2,11 @@
     <thead class="thead-light">
         <tr>            
             <th>Ürün Çıkış Numarası</th>
+            <th>Ürün Adı</th>
+            <th>Barcode</th>
             <th>Tarih</th>
+            <th>Satış Fiyatı</th>
+            <th>Adet</th>            
             <th>Toplam Fiyat</th>
             <th>Şirket</th>
             <th>Kullanıcı Adı</th>
@@ -13,7 +17,11 @@
     <tbody>
         <tr *ngFor="let productOutput of productOutputs">            
             <td>{{productOutput.exitNumber}}</td>
+            <td>{{productOutput.productName}}</td>
+            <td>{{productOutput.barcode}}</td>
             <td>{{productOutput.date |date}}</td>
+            <td>{{productOutput.unitPrice | currency:"TRY":"₺ ":""}}</td>
+            <td>{{productOutput.count}}</td>
             <td>{{productOutput.totalPrice | currency:"TRY":"₺ ":"" }}</td>            
             <td>{{productOutput.companyName}}</td>
             <td>{{productOutput.userName}}</td>

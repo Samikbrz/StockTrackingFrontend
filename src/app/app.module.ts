@@ -54,6 +54,7 @@ import { StockStoreAddComponent } from './components/stock-store/stock-store-add
 import { OperationClaimAddComponent } from './components/operation-claim/operation-claim-add/operation-claim-add.component';
 import { OperationClaimEditComponent } from './components/operation-claim/operation-claim-edit/operation-claim-edit.component';
 import { ProductAcceptanceEditComponent } from './components/product-acceptance/product-acceptance-edit/product-acceptance-edit.component';
+import { StoreTransferEditComponent } from './components/store-transfer/store-transfer-edit/store-transfer-edit.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { ProductAcceptanceEditComponent } from './components/product-acceptance/
     StockStoreAddComponent,
     OperationClaimAddComponent,
     OperationClaimEditComponent,
-    ProductAcceptanceEditComponent,   
+    ProductAcceptanceEditComponent,
+    StoreTransferEditComponent,   
   ],
   imports: [
     BrowserModule,
