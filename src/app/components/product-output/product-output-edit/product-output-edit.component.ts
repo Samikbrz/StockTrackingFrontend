@@ -86,8 +86,7 @@ export class ProductOutputEditComponent implements OnInit {
       this.productOutputService.update(productOutputModel).subscribe((response)=>{
         this.toastrService.success(response.message,"Başarılı");   
         window.location.reload();            
-      },(responseError)=>{  
-        console.log(responseError)      
+      },(responseError)=>{              
         this.toastrService.error(responseError.error.message,"Hata");
       });      
     }
