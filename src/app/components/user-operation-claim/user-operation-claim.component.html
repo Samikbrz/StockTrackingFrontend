@@ -2,7 +2,7 @@
     <thead class="thead-light">
         <tr>            
             <th>Kullanıcı</th>
-            <th>Rol</th>                                    
+            <th>Yetki</th>                                    
             <th>Güncelle</th>  
             <th>Sil</th>  
         </tr>
@@ -15,10 +15,10 @@
                 <button type="button" class="btn btn-primary" routerLink="/useroperationolaim/update/{{userOperationClaim.id}}" >Güncelle</button>                
             </td> 
             <td>                
-                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+                <button type="button" class="btn btn-danger  ml-2" *ngIf="userOperationClaim.operationClaimName!='admin'" (click)="deleteUserOperationClaim(userOperationClaim)">Sil</button>
             </td>           
         </tr>
-        <button type="button" class="btn btn-success mt-2 shadow" routerLink="/useroperationolaim/add">Kullanıcı ve Yetki Ekle</button>        
+        <button type="button" class="btn btn-success mt-2 shadow" routerLink="/useroperationclaim/add">Kullanıcı ve Yetki Ekle</button>        
     </tbody>   
 </table>
 
