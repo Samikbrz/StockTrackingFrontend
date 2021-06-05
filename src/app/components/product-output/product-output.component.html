@@ -29,7 +29,7 @@
                 <button type="button" class="btn btn-primary" routerLink="/productoutput/update/{{productOutput.id}}" >Güncelle</button>                
             </td> 
             <td>                
-                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteProductOutput(productOutput)">Sil</button>
             </td>           
         </tr>
         <button type="button" class="btn btn-success mt-2" routerLink="/productOutput/add">Yeni Ürün Çıkışı Oluştur</button>        
