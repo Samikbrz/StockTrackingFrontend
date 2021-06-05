@@ -21,6 +21,7 @@ import { OperationClaimComponent } from './components/operation-claim/operation-
 import { ProductAcceptanceAddComponent } from './components/product-acceptance/product-acceptance-add/product-acceptance-add.component';
 import { ProductAcceptanceEditComponent } from './components/product-acceptance/product-acceptance-edit/product-acceptance-edit.component';
 import { ProductAcceptanceComponent } from './components/product-acceptance/product-acceptance.component';
+import { ProductOutputAddComponent } from './components/product-output/product-output-add/product-output-add.component';
 import { ProductOutputComponent } from './components/product-output/product-output.component';
 import { ProductUnitAddComponent } from './components/product-unit/product-unit-add/product-unit-add.component';
 import { ProductUnitEditComponent } from './components/product-unit/product-unit-edit/product-unit-edit.component';
@@ -65,6 +66,7 @@ const routes: Routes = [
   {path:"productacceptance/update/:productAcceptanceId",component:ProductAcceptanceEditComponent,canActivate:[LoginGuard]},
   {path:"productacceptance/add",component:ProductAcceptanceAddComponent,canActivate:[LoginGuard]},
   {path:"productoutputs",component:ProductOutputComponent,canActivate:[LoginGuard]},
+  {path:"productOutput/add",component:ProductOutputAddComponent,canActivate:[LoginGuard]},
   {path:"exchangerate",component:ExchangeRateComponent,canActivate:[LoginGuard]},
   {path:"proposals",component:ProposalComponent,canActivate:[LoginGuard]}, 
   {path:"proposal/add",component:ProposalAddComponent,canActivate:[LoginGuard]}, 
