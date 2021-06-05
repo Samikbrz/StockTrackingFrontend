@@ -8,8 +8,8 @@
                 <form [formGroup]="stockStoreAddForm">
 
                     <label for="productAcceptanceId">Ürünler</label>                   
-                    <select (change)="selectChangeHandler($event)" class="form-select mt-1 mb-3" formControlName="productAcceptanceId">                       
-                        <option [ngValue]="productacceptance.id" *ngFor="let productacceptance of productAcceptances">{{productacceptance.productName}}</option>                                                                    
+                    <select [(ngModel)]="selectedProductId" (ngModelChange)="getProductId($event)" class="form-select mt-1 mb-3" formControlName="productAcceptanceId">                       
+                        <option [value]="productacceptance.id" *ngFor="let productacceptance of productAcceptances">{{productacceptance.productName}}</option>                                                                    
                     </select>
 
                     <label for="productUnitId">Ürün Birimi Adı</label>                   

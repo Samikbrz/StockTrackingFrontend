@@ -26,6 +26,7 @@ export class StockStoreAddComponent implements OnInit {
   stores:Store[];
   shelves:Shelf[];
   drawers:Drawer[];  
+  selectedProductId: number;
 
   stockStoreAddForm:FormGroup;    
 
@@ -63,9 +64,9 @@ export class StockStoreAddComponent implements OnInit {
     });   
   }
 
-  selectChangeHandler (event: any) {
-    console.log(event.target.value);
-    this.getInformations(event.target.value);
+  getProductId(val: any) {
+    console.log("Test value: " + val);
+    this.getInformations(val)
   }
 
   getProductUnits(){
@@ -110,7 +111,7 @@ export class StockStoreAddComponent implements OnInit {
     }
   }
 
-  getInformations(productAcceptanceId:any){    
+  getInformations(productAcceptanceId:number){    
     this.productAcceptanceService.getById(productAcceptanceId).subscribe(response=>{
       this.productAcceptance=response.data[0];      
       console.log(response.data[0])
