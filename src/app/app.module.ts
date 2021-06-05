@@ -60,6 +60,7 @@ import { UserOperationClaimAddComponent } from './components/user-operation-clai
 import { UserOperationClaimEditComponent } from './components/user-operation-claim/user-operation-claim-edit/user-operation-claim-edit.component';
 import { ProductOutputAddComponent } from './components/product-output/product-output-add/product-output-add.component';
 import { ProductOutputEditComponent } from './components/product-output/product-output-edit/product-output-edit.component';
+import { StockStoreEditComponent } from './components/stock-store/stock-store-edit/stock-store-edit.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +115,8 @@ import { ProductOutputEditComponent } from './components/product-output/product-
     UserOperationClaimAddComponent,
     UserOperationClaimEditComponent,
     ProductOutputAddComponent,
-    ProductOutputEditComponent,   
+    ProductOutputEditComponent,
+    StockStoreEditComponent,   
   ],
   imports: [
     BrowserModule,

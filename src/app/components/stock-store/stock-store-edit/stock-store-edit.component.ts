@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Drawer } from 'src/app/models/drawer';
 import { ProductAcceptanceDetail } from 'src/app/models/productAcceptanceDetail';
 import { ProductUnit } from 'src/app/models/productUnit';
 import { Shelf } from 'src/app/models/shelf';
+import { StockStoreDetail } from 'src/app/models/stockStoreDetail';
 import { Store } from 'src/app/models/store';
 import { DrawerService } from 'src/app/services/drawer.service';
 import { ProductAcceptanceService } from 'src/app/services/product-acceptance.service';
@@ -14,21 +16,22 @@ import { StockStoreService } from 'src/app/services/stock-store.service';
 import { StoreService } from 'src/app/services/store.service';
 
 @Component({
-  selector: 'app-stock-store-add',
-  templateUrl: './stock-store-add.component.html',
-  styleUrls: ['./stock-store-add.component.css']
+  selector: 'app-stock-store-edit',
+  templateUrl: './stock-store-edit.component.html',
+  styleUrls: ['./stock-store-edit.component.css']
 })
-export class StockStoreAddComponent implements OnInit {
+export class StockStoreEditComponent implements OnInit {
 
   productUnits:ProductUnit[];
   productAcceptances:ProductAcceptanceDetail[];
   productAcceptance:ProductAcceptanceDetail;
+  stockStore:StockStoreDetail;
   stores:Store[];
   shelves:Shelf[];
   drawers:Drawer[];  
   selectedProductId: number;
 
-  stockStoreAddForm:FormGroup;    
+  stockStoreUpdateForm:FormGroup;    
 
   constructor(
     private formBuilder:FormBuilder,
@@ -38,35 +41,40 @@ export class StockStoreAddComponent implements OnInit {
     private shelfService:ShelfService,
     private storeService:StoreService,
     private drawerService:DrawerService,
-    private productUnitService:ProductUnitService
-  ) { }
+    private productUnitService:ProductUnitService,
+    private activatedRoute: ActivatedRoute,
+  ) {    
+   }
 
   ngOnInit(): void {   
-    this.createStockStoreAddForm();    
+    this.createStockStoreUpdateForm();    
     this.getProductUnits();
     this.getProductAceptances();
     this.getStores();
     this.getShelves();
     this.getDrawers();
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['stockStoreId']) {
+        this.getStockStoreById(params['stockStoreId']);
+      }
+    });
   }  
 
-  createStockStoreAddForm() {
-    this.stockStoreAddForm = this.formBuilder.group({  
-      productAcceptanceId:['',Validators.required],   
-      productName:['',Validators.required],
+  createStockStoreUpdateForm() {
+    this.stockStoreUpdateForm = this.formBuilder.group({  
+      productAcceptanceId:['',Validators.required],      
       productUnitId:['',Validators.required],
       unitPrice:['',Validators.required],
       barcode:['',Validators.required],
       storeId:['',Validators.required],
       shelfId:['',Validators.required],
       drawerId:['',Validators.required],
-      count:['',Validators.required]             
+      count:['',Validators.required],                   
     });   
   }
 
   getProductId(val: any) {
-    console.log("Test value: " + val);
-    this.getInformations(val)
+    console.log("Test value: " + val);    
   }
 
   getProductUnits(){
@@ -99,10 +107,11 @@ export class StockStoreAddComponent implements OnInit {
     })
   }
 
-  addStockStore(){
-    if (this.stockStoreAddForm.valid) {
-      let stockStoreModel = Object.assign({}, this.stockStoreAddForm.value);      
-      this.stockStoreService.add(stockStoreModel).subscribe((response)=>{
+  updateStockStore(){
+    if (this.stockStoreUpdateForm.valid) {
+      let stockStoreModel = Object.assign({}, this.stockStoreUpdateForm.value);
+      stockStoreModel.id=this.stockStore.id;      
+      this.stockStoreService.update(stockStoreModel).subscribe((response)=>{
         this.toastrService.success(response.message,"Başarılı");   
         window.location.reload();            
       },responseError=>{  
@@ -111,25 +120,24 @@ export class StockStoreAddComponent implements OnInit {
             this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Hata");
           }
         }       
-      });        
+      });      
     }
   }
 
-  getInformations(productAcceptanceId:number){    
-    this.productAcceptanceService.getById(productAcceptanceId).subscribe(response=>{
-      this.productAcceptance=response.data[0];      
-      console.log(response.data[0])
-      this.stockStoreAddForm.setValue({
-        productAcceptanceId:productAcceptanceId,
-        unitPrice:this.productAcceptance.unitPrice,
-        count:this.productAcceptance.count, 
-        barcode:this.productAcceptance.barcode,
-        productName:null,
-        productUnitId:null,     
-        storeId:null,
-        shelfId:null,
-        drawerId:null,    
+  getStockStoreById(stockStoreId:number){    
+    this.stockStoreService.getStockStoreById(stockStoreId).subscribe((response)=>{
+      this.stockStore=response.data[0];      
+      this.stockStoreUpdateForm.setValue({
+        productAcceptanceId:this.stockStore.productAcceptanceId,
+        unitPrice:this.stockStore.unitPrice,
+        count:this.stockStore.count, 
+        barcode:this.stockStore.barcode,        
+        productUnitId:this.stockStore.productUnitId,     
+        storeId:this.stockStore.storeId,
+        shelfId:this.stockStore.shelfId,
+        drawerId:this.stockStore.drawerId,        
       })
-    })
-  }
+    });
+  } 
+
 }

@@ -19,7 +19,7 @@ export class StockStoreService {
     return this.httpClient.get<ListResponseModel<StockStoreDetail>>(newPath);     
   }
 
-  getStockStoreById(stockStoreId:number):Observable<ListResponseModel<StockStoreDetail>>{
+  getStockStoreById(stockStoreId:number):Observable<ListResponseModel<StockStoreDetail>>{    
     let newPath=this.apiUrl+"/stockstore/getbyid?id="+stockStoreId;
     return this.httpClient.get<ListResponseModel<StockStoreDetail>>(newPath);
   }

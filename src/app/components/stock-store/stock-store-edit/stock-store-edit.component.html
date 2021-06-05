@@ -1,0 +1,66 @@
+<div class="content mt-3 shadow" >
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Ürün Güncelleme</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="stockStoreUpdateForm">
+
+                    <label for="productAcceptanceId">Ürünler</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="productAcceptanceId">                       
+                        <option [ngValue]="productacceptance.id" *ngFor="let productacceptance of productAcceptances">{{productacceptance.productName}}</option>                                                                    
+                    </select>
+
+                    <label for="productUnitId">Ürün Birimi Adı</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="productUnitId">                       
+                        <option  [ngValue]="productunit.id" *ngFor="let productunit of productUnits">{{productunit.productUnitName}}</option>                                                                    
+                    </select>
+                    
+                    <label for="unitPrice">Birim fiyat</label>
+                    <div class="form-group mt-1 mb-1">
+                        <input class="form-control" 
+                        type="number"
+                        formControlName="unitPrice"                                                                                                                 
+                        />
+                    </div>
+
+                    <label for="count">Ürün Adedi</label>
+                    <div class="form-group mt-1 mb-1">
+                        <input class="form-control" 
+                        type="number"
+                        min="1"
+                        formControlName="count"                                                                                                                 
+                        />
+                    </div>                  
+
+                    <label for="barcode" class="col-2 col-form-label">Barkod</label>
+                    <div class="form-group mt-1 mb-1">
+                        <input class="form-control" 
+                        type="number"
+                        formControlName="barcode"                                                                                                                 
+                        />
+                    </div> 
+
+                    <label for="storeId">Depo</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="storeId">                       
+                        <option  [ngValue]="store.id" *ngFor="let store of stores">{{store.storeName}}</option>                                                                    
+                    </select>  
+
+                    <label for="shelfId">Raf</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="shelfId">                       
+                        <option  [ngValue]="shelf.id" *ngFor="let shelf of shelves">{{shelf.shelfName}}</option>                                                                    
+                    </select> 
+                    
+                    <label for="drawerId">Çekmece</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="drawerId">                       
+                        <option  [ngValue]="drawer.id" *ngFor="let drawer of drawers">{{drawer.drawerName}}</option>                                                                    
+                    </select>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" routerLink="/stockstores" (click)="updateStockStore()">Ürünü Güncelle</button>
+            </div>
+        </div>
+    </div>   
+</div>

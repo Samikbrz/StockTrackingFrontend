@@ -34,6 +34,7 @@ import { ShelfAddComponent } from './components/shelf/shelf-add/shelf-add.compon
 import { ShelfEditComponent } from './components/shelf/shelf-edit/shelf-edit.component';
 import { ShelfComponent } from './components/shelf/shelf.component';
 import { StockStoreAddComponent } from './components/stock-store/stock-store-add/stock-store-add.component';
+import { StockStoreEditComponent } from './components/stock-store/stock-store-edit/stock-store-edit.component';
 import { StockStoreComponent } from './components/stock-store/stock-store.component';
 import { StoreTransferAddComponent } from './components/store-transfer/store-transfer-add/store-transfer-add.component';
 import { StoreTransferComponent } from './components/store-transfer/store-transfer.component';
@@ -95,6 +96,7 @@ const routes: Routes = [
   {path:"storetransfers/add",component:StoreTransferAddComponent,canActivate:[LoginGuard]},  
   {path:"stockstores",component:StockStoreComponent,canActivate:[LoginGuard]},
   {path:"stockstore/add",component:StockStoreAddComponent,canActivate:[LoginGuard]},
+  {path:"stockstore/update/:stockStoreId",component:StockStoreEditComponent,canActivate:[LoginGuard]},
 ];
 
 @NgModule({
