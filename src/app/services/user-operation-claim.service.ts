@@ -30,7 +30,7 @@ export class UserOperationClaimService {
   }
 
   update(userOperationClaim:UserOperationClaim):Observable<ResponseModel>{
-    let newPath=this.apiUrl+"/useroperationclaim/update";
+    let newPath=this.apiUrl+"/useroperationclaim/update";    
     return this.httpClient.post<ResponseModel>(newPath,userOperationClaim);
   }
 

@@ -53,8 +53,7 @@ export class UserOperationClaimAddComponent implements OnInit {
 
   addUserOperationClaim(){
     if (this.userOperaitonClaimAddForm.valid) {
-      let operaitonClaimModel = Object.assign({}, this.userOperaitonClaimAddForm.value);  
-      console.log(operaitonClaimModel)    
+      let operaitonClaimModel = Object.assign({}, this.userOperaitonClaimAddForm.value);          
       this.userOperationClaimService.add(operaitonClaimModel).subscribe((response)=>{
         this.toastrService.success(response.message,"Başarılı");   
         window.location.reload();         

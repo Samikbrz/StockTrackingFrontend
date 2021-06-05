@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserOperationClaim } from 'src/app/models/userOperationClaim';
 import { UserOperationClaimDetail } from 'src/app/models/userOperationClaimDetail';
@@ -14,10 +15,11 @@ export class UserOperationClaimComponent implements OnInit {
   userOperationClaims:UserOperationClaimDetail[];
 
   constructor(private userOperationClaimService:UserOperationClaimService,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService,
+    private router:Router,) { }
 
   ngOnInit(): void {
-    this.getUserOperationClaims();
+    this.getUserOperationClaims();    
   }
 
   getUserOperationClaims(){

@@ -39,6 +39,7 @@ import { StoreAddComponent } from './components/store/store-add/store-add.compon
 import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
 import { StoreComponent } from './components/store/store.component';
 import { UserOperationClaimAddComponent } from './components/user-operation-claim/user-operation-claim-add/user-operation-claim-add.component';
+import { UserOperationClaimEditComponent } from './components/user-operation-claim/user-operation-claim-edit/user-operation-claim-edit.component';
 import { UserOperationClaimComponent } from './components/user-operation-claim/user-operation-claim.component';
 import { UserAddComponent } from './components/user/user-add/user-add.component';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path:"user/update/:id",component:UserEditComponent,canActivate:[LoginGuard]},
   {path:"useroperationclaims",component:UserOperationClaimComponent,canActivate:[LoginGuard]},
   {path:"useroperationclaim/add",component:UserOperationClaimAddComponent,canActivate:[LoginGuard]},
+  {path:"useroperationclaim/update/:userOperationClaimId",component:UserOperationClaimEditComponent,canActivate:[LoginGuard]},
   {path:"operationclaims",component:OperationClaimComponent,canActivate:[LoginGuard]},
   {path:"operationclaim/add",component:OperationClaimAddComponent,canActivate:[LoginGuard]},
   {path:"operationclaim/update/:operationClaimId",component:OperationClaimEditComponent,canActivate:[LoginGuard]},
