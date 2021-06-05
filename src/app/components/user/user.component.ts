@@ -25,4 +25,13 @@ export class UserComponent implements OnInit {
     })
   }
 
+  deleteUser(user:User){
+    if(window.confirm("Emin misiniz?")){
+      this.userService.delete(user).subscribe(response=>{
+        this.toastrService.success(response.message,"Deleted")
+        window.location.reload();
+      })
+    }
+  }
+
 }

@@ -7,6 +7,7 @@ import { TokenModel } from '../models/tokenModel';
 import { LoginModel } from '../models/loginModel';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { RegisterModel } from '../models/registerModel';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,11 @@ export class AuthService {
       localStorage.setItem('user',JSON.stringify(user))
     })
     return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath,loginModel);
+  }
+
+  register(registerModel:RegisterModel){
+    let newPath=this.apiUrl+"/register";
+    return this.httpClient.post<ResponseModel>(newPath,registerModel);
   }
 
   getByEmail(email:string):Observable<ListResponseModel<User>>{    
