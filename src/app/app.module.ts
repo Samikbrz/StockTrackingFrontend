@@ -61,6 +61,7 @@ import { UserOperationClaimEditComponent } from './components/user-operation-cla
 import { ProductOutputAddComponent } from './components/product-output/product-output-add/product-output-add.component';
 import { ProductOutputEditComponent } from './components/product-output/product-output-edit/product-output-edit.component';
 import { StockStoreEditComponent } from './components/stock-store/stock-store-edit/stock-store-edit.component';
+import { BarcodePipePipe } from './pipes/barcode-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { StockStoreEditComponent } from './components/stock-store/stock-store-ed
     UserOperationClaimEditComponent,
     ProductOutputAddComponent,
     ProductOutputEditComponent,
-    StockStoreEditComponent,   
+    StockStoreEditComponent,
+    BarcodePipePipe,   
   ],
   imports: [
     BrowserModule,
