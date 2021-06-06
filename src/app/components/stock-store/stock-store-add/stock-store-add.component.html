@@ -13,13 +13,13 @@
                     </select>
 
                     <label for="productUnitId">Ürün Birimi Adı</label>                   
-                    <select class="form-select mt-1 mb-3" formControlName="productUnitId">                       
-                        <option  [ngValue]="productunit.id" *ngFor="let productunit of productUnits">{{productunit.productUnitName}}</option>                                                                    
+                    <select [(ngModel)]="selectedProductUnitId" class="form-select mt-1 mb-3" formControlName="productUnitId">                       
+                        <option  [value]="productunit.id" *ngFor="let productunit of productUnits">{{productunit.productUnitName}}</option>                                                                    
                     </select>
                     
                     <label for="unitPrice">Birim fiyat</label>
                     <div class="form-group mt-1 mb-1">
-                        <input class="form-control" 
+                        <input [(ngModel)]="productUnitPrice" class="form-control" 
                         type="number"
                         formControlName="unitPrice" 
                         readonly                                                                                        
@@ -28,7 +28,7 @@
 
                     <label for="count">Ürün Adedi</label>
                     <div class="form-group mt-1 mb-1">
-                        <input class="form-control" 
+                        <input [(ngModel)]="productCount" class="form-control" 
                         type="number"
                         min="1"
                         formControlName="count"
@@ -38,7 +38,7 @@
 
                     <label for="barcode" class="col-2 col-form-label">Barkod</label>
                     <div class="form-group mt-1 mb-1">
-                        <input class="form-control" 
+                        <input [(ngModel)]="productBarcode" class="form-control" 
                         type="number"
                         formControlName="barcode"
                         readonly                                                                                         
