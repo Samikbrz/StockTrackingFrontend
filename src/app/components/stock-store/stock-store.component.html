@@ -31,7 +31,7 @@
                 <button type="button" class="btn btn-primary" routerLink="/stockstore/update/{{stockStore.id}}" >Güncelle</button>                
             </td> 
             <td>                
-                <button type="button" class="btn btn-danger  ml-2" >Sil</button>
+                <button type="button" class="btn btn-danger  ml-2" (click)="deleteStockStore(stockStore)">Sil</button>
             </td>           
         </tr>
         <button type="button" class="btn btn-success mt-2" routerLink="/stockstore/add">Yeni Ürün Ekle</button>        

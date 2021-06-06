@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { StockStore } from 'src/app/models/stockStore';
 import { StockStoreDetail } from 'src/app/models/stockStoreDetail';
 import { StockStoreService } from 'src/app/services/stock-store.service';
 
@@ -25,6 +26,15 @@ export class StockStoreComponent implements OnInit {
       this.stockStores=response.data;
       this.toastrService.success(response.message,"Başarılı");
     })
+  }
+
+  deleteStockStore(stockStore:StockStore){
+    if(window.confirm("Depodaki ürünü silmek istediğinizden emin misiniz?")){
+      this.stockStoreService.delete(stockStore).subscribe(response=>{
+        window.location.reload();
+        this.toastrService.success("Silindi","Başarılı");        
+      })
+    } 
   }
 
 }
