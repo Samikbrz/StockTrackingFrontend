@@ -37,6 +37,7 @@ import { StockStoreAddComponent } from './components/stock-store/stock-store-add
 import { StockStoreEditComponent } from './components/stock-store/stock-store-edit/stock-store-edit.component';
 import { StockStoreComponent } from './components/stock-store/stock-store.component';
 import { StoreTransferAddComponent } from './components/store-transfer/store-transfer-add/store-transfer-add.component';
+import { StoreTransferEditComponent } from './components/store-transfer/store-transfer-edit/store-transfer-edit.component';
 import { StoreTransferComponent } from './components/store-transfer/store-transfer.component';
 import { StoreAddComponent } from './components/store/store-add/store-add.component';
 import { StoreEditComponent } from './components/store/store-edit/store-edit.component';
@@ -94,6 +95,7 @@ const routes: Routes = [
   {path:"drawer/update/:drawerId",component:DrawerEditComponent,canActivate:[LoginGuard]},
   {path:"storetransfers",component:StoreTransferComponent,canActivate:[LoginGuard]},
   {path:"storetransfers/add",component:StoreTransferAddComponent,canActivate:[LoginGuard]},  
+  {path:"storetransfer/update/:storeTransferId",component:StoreTransferEditComponent,canActivate:[LoginGuard]},  
   {path:"stockstores",component:StockStoreComponent,canActivate:[LoginGuard]},
   {path:"stockstore/add",component:StockStoreAddComponent,canActivate:[LoginGuard]},
   {path:"stockstore/update/:stockStoreId",component:StockStoreEditComponent,canActivate:[LoginGuard]},
