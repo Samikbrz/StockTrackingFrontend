@@ -40,9 +40,13 @@ export class CompanyAddComponent implements OnInit {
       this.companyService.add(companyModel).subscribe((response)=>{
         this.toastrService.success("Firma başarı ile eklendi","Başarılı");   
         window.location.reload();     
-      },(responseError)=>{        
-        this.toastrService.error(responseError.error.message)
-      });      
+      },responseError=>{  
+        if(responseError.error.Errors.length>0){
+          for(let i=0;i<responseError.error.Errors.length;i++){
+            this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Hata");
+          }
+        }       
+      });     
     }
   }
 }

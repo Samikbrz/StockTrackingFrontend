@@ -78,8 +78,12 @@ export class ProposalAddComponent implements OnInit {
       this.proposalService.add(proposalModel).subscribe((response)=>{
         this.toastrService.success("Teklif başarı ile oluşturuldu","Başarılı");   
         window.location.reload();     
-      },(responseError)=>{        
-        this.toastrService.error(responseError.error.message,"Hata");
+      },responseError=>{  
+        if(responseError.error.Errors.length>0){
+          for(let i=0;i<responseError.error.Errors.length;i++){
+            this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Hata");
+          }
+        }       
       });      
     }
   }

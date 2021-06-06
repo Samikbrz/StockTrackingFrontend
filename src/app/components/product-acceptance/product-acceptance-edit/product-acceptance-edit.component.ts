@@ -80,7 +80,14 @@ export class ProductAcceptanceEditComponent implements OnInit {
           window.location.reload();
         },
         (responseError) => {
-          this.toastrService.error(responseError.messaage, 'Hata');
+          if (responseError.error.Errors.length > 0) {
+            for (let i = 0; i < responseError.error.Errors.length; i++) {
+              this.toastrService.error(
+                responseError.error.Errors[i].ErrorMessage,
+                'Hata'
+              );
+            }
+          }
         }
       );
     }

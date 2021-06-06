@@ -45,10 +45,13 @@ export class ProductUnitEditComponent implements OnInit {
         (response) => {        
           this.toastrService.success('Firma güncellendi','Başarılı');          
           window.location.reload();                  
-        },(responseError) => {
-          this.toastrService.success(responseError.error.Errors.message,"Hata");
-        }
-      );
+        },responseError=>{  
+          if(responseError.error.Errors.length>0){
+            for(let i=0;i<responseError.error.Errors.length;i++){
+              this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Hata");
+            }
+          }       
+        });
     }else{
       this.toastrService.error('Form eksik', 'Hata');
     }
