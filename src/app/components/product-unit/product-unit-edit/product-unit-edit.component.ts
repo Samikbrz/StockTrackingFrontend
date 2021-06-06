@@ -28,7 +28,6 @@ export class ProductUnitEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.createProductUnitEditForm();
-
   }
 
   createProductUnitEditForm(){
