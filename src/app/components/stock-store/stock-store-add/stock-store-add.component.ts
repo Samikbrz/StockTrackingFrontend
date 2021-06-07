@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Drawer } from 'src/app/models/drawer';
+import { ProductAcceptance } from 'src/app/models/productAcceptance';
 import { ProductAcceptanceDetail } from 'src/app/models/productAcceptanceDetail';
 import { ProductUnit } from 'src/app/models/productUnit';
 import { Shelf } from 'src/app/models/shelf';
@@ -21,15 +22,14 @@ import { StoreService } from 'src/app/services/store.service';
 export class StockStoreAddComponent implements OnInit {
   productUnits: ProductUnit[];
   productAcceptances: ProductAcceptanceDetail[];
-  productAcceptance: ProductAcceptanceDetail;
+  productAcceptance: ProductAcceptance;
   stores: Store[];
   shelves: Shelf[];
   drawers: Drawer[];
-  selectedProductId: number;
-  selectedProductUnitId: number;
-  productUnitPrice: number;
-  productCount: number;
-  productBarcode: string;
+  selectedProductId: number;  
+  unitPrice: number;
+  count: number;
+  barcode: string;
 
   stockStoreAddForm: FormGroup;
 
@@ -55,8 +55,7 @@ export class StockStoreAddComponent implements OnInit {
 
   createStockStoreAddForm() {
     this.stockStoreAddForm = this.formBuilder.group({
-      productAcceptanceId: ['', Validators.required],
-      productName: ['', Validators.required],
+      productAcceptanceId: ['', Validators.required],      
       productUnitId: ['', Validators.required],
       unitPrice: ['', Validators.required],
       barcode: ['', Validators.required],
@@ -67,9 +66,10 @@ export class StockStoreAddComponent implements OnInit {
     });
   }
 
-  getProductId(val: any) {
-    console.log('Test value: ' + val);
-    this.getInformations(val);
+  getProductId(val: any) {  
+    if(val!==undefined){
+      this.getInformations(val);
+    }    
   }
 
   getProductUnits() {
@@ -104,9 +104,10 @@ export class StockStoreAddComponent implements OnInit {
     });
   }
 
-  addStockStore() {
+  addStockStore() {    
     if (this.stockStoreAddForm.valid) {
       let stockStoreModel = Object.assign({}, this.stockStoreAddForm.value);
+      console.log(stockStoreModel)
       this.stockStoreService.add(stockStoreModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
@@ -123,6 +124,8 @@ export class StockStoreAddComponent implements OnInit {
           }
         }
       );
+    }else{
+       this.toastrService.error("Form Eksik!", 'Uyarı!');
     }
   }
 
@@ -130,11 +133,10 @@ export class StockStoreAddComponent implements OnInit {
     this.productAcceptanceService
       .getById(productAcceptanceId)
       .subscribe((response) => {
-        this.productAcceptance = response.data[0];
-        console.log(response.data[0]);
-        this.productUnitPrice = this.productAcceptance.unitPrice;
-        this.productCount = this.productAcceptance.count;
-        this.productBarcode= this.productAcceptance.barcode;
+        this.productAcceptance = response.data[0];        
+        this.unitPrice = this.productAcceptance.unitPrice;
+        this.count = this.productAcceptance.count;
+        this.barcode= this.productAcceptance.barcode;
       });
   }
 }

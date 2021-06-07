@@ -24,6 +24,11 @@ export class StockStoreService {
     return this.httpClient.get<ListResponseModel<StockStoreDetail>>(newPath);
   }
 
+  getByProductAcceptanceId(productAcceptanceId:number):Observable<ListResponseModel<StockStoreDetail>>{    
+    let newPath=this.apiUrl+"/stockstore/getbyproductacceptanceid?id="+productAcceptanceId;
+    return this.httpClient.get<ListResponseModel<StockStoreDetail>>(newPath);
+  }
+
   update(stockStore:StockStore):Observable<ResponseModel>{
     let newPath=this.apiUrl+"/stockstore/update";
     return this.httpClient.post<ResponseModel>(newPath,stockStore);
