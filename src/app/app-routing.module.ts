@@ -72,7 +72,7 @@ const routes: Routes = [
   {path:"productOutput/add",component:ProductOutputAddComponent,canActivate:[LoginGuard]},
   {path:"productOutput/update/:productOutputId",component:ProductOutputEditComponent,canActivate:[LoginGuard]},
   {path:"exchangerate",component:ExchangeRateComponent,canActivate:[LoginGuard]},
-  {path:"proposals",component:ProposalComponent,canActivate:[LoginGuard]}, 
+  {path:"proposals",component:ProposalComponent,canActivate:[LoginGuard]},   
   {path:"proposal/add",component:ProposalAddComponent,canActivate:[LoginGuard]}, 
   {path:"proposal/update/:proposalId",component:ProposalEditComponent,canActivate:[LoginGuard]},
   {path:"brands",component:BrandComponent,canActivate:[LoginGuard]},

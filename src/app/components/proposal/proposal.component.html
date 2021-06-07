@@ -3,18 +3,19 @@
         <tr>            
             <th>Teklif Numarası</th>
             <th>Barkod</th>
+            <th>Adet</th>
             <th>Tarih</th>
             <th>Şirket</th>
             <th>Kullanıcı Adı</th>
             <th>Güncelle</th>  
-            <th>Sil</th> 
-            <th>Teklif Detayı</th> 
+            <th>Sil</th>             
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let proposal of proposals">            
             <td>{{proposal.proposalNo}}</td>
             <td>{{proposal.barcode}}</td>
+            <td>{{proposal.count}}</td>
             <td>{{proposal.date |date}}</td>
             <td>{{proposal.companyName}}</td>
             <td>{{proposal.userName}}</td>
@@ -23,10 +24,7 @@
             </td> 
             <td>                
                 <button type="button" class="btn btn-danger  ml-2" >Sil</button>
-            </td> 
-            <td>                
-                <button type="button" class="btn btn-secondary  ml-2" >Teklif Detayı</button>
-            </td>          
+            </td>                       
         </tr>
         <button type="button" class="btn btn-success mt-2" routerLink="/proposal/add">Yeni Teklif Oluştur</button>        
     </tbody>   

@@ -118,7 +118,7 @@ import { BarcodePipePipe } from './pipes/barcode-pipe.pipe';
     ProductOutputAddComponent,
     ProductOutputEditComponent,
     StockStoreEditComponent,
-    BarcodePipePipe,   
+    BarcodePipePipe,       
   ],
   imports: [
     BrowserModule,
