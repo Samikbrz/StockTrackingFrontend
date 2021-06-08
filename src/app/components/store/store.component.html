@@ -2,7 +2,8 @@
     <thead class="thead-light">
         <tr>           
             <th>Depo Adı</th>
-            <th>Satış Deposu mu?</th>   
+            <th>Satış Deposu mu?</th> 
+            <th>Kiritk Seviye</th>   
             <th>Güncelle</th>  
             <th>Sil</th>         
         </tr>
@@ -10,7 +11,8 @@
     <tbody>
         <tr *ngFor="let store of stores">           
             <td>{{store.storeName}}</td>
-            <td>{{store.isSalesStore}}</td>   
+            <td>{{store.isSalesStore}}</td> 
+            <td>{{store.criticalLevel}}</td>   
             <td>
                 <button type="button" class="btn btn-primary" routerLink="/store/update/{{store.id}}">Güncelle</button>                
             </td> 
