@@ -84,14 +84,12 @@ export class ProductOutputAddComponent implements OnInit {
     });
   }
 
-  addProductOutput() {
-    console.log(this.productOutputAddForm.value)
+  addProductOutput() {    
     if (this.productOutputAddForm.valid) {
       let productOutputModel = Object.assign(
         {},
         this.productOutputAddForm.value
-      );
-      console.log(productOutputModel)
+      );      
       this.productOutputService.add(productOutputModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');

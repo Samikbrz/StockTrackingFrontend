@@ -42,8 +42,7 @@ export class UserEditComponent implements OnInit {
 
   updateUser(){
     if (this.userEditForm.valid) {
-      let userModel = Object.assign({}, this.userEditForm.value);
-      console.log(userModel)
+      let userModel = Object.assign({}, this.userEditForm.value);      
       userModel.id=this.user.id;
       this.userService.update(userModel).subscribe((response)=>{
         this.toastrService.success(response.message,"Başarılı");   

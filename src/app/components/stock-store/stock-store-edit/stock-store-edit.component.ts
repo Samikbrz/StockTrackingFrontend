@@ -71,11 +71,7 @@ export class StockStoreEditComponent implements OnInit {
       drawerId:['',Validators.required],
       count:['',Validators.required],                   
     });   
-  }
-
-  getProductId(val: any) {
-    console.log("Test value: " + val);    
-  }
+  } 
 
   getProductUnits(){
     this.productUnitService.getProductUnits().subscribe(response=>{

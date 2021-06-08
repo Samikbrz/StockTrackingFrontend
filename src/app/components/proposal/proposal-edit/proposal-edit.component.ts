@@ -98,8 +98,7 @@ export class ProposalEditComponent implements OnInit {
 
   getProposalById(proposalId:number){    
     this.proposalService.getProposalById(proposalId).subscribe((response)=>{
-      this.proposal=response.data[0];   
-      console.log(response.data[0])   
+      this.proposal=response.data[0];        
       this.proposalEditForm.setValue({
         proposalNo:this.proposal.proposalNo,
         date:this.proposal.date,

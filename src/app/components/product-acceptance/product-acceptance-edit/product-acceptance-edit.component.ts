@@ -71,8 +71,7 @@ export class ProductAcceptanceEditComponent implements OnInit {
       let productAcceptanceModel = Object.assign(
         {},
         this.productAcceptanceUpdateForm.value
-      );
-      console.log(productAcceptanceModel);
+      );      
       productAcceptanceModel.id = this.productAcceptance.id;
       this.productAcceptanceService.update(productAcceptanceModel).subscribe(
         (response) => {

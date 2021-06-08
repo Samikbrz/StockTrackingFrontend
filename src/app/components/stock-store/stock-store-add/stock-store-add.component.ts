@@ -106,8 +106,7 @@ export class StockStoreAddComponent implements OnInit {
 
   addStockStore() {    
     if (this.stockStoreAddForm.valid) {
-      let stockStoreModel = Object.assign({}, this.stockStoreAddForm.value);
-      console.log(stockStoreModel)
+      let stockStoreModel = Object.assign({}, this.stockStoreAddForm.value);      
       this.stockStoreService.add(stockStoreModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');

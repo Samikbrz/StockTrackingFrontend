@@ -69,11 +69,9 @@ export class ProposalAddComponent implements OnInit {
     });   
   }
 
-  addProposal(){
-    console.log(this.proposalAddForm.value)
+  addProposal(){    
     if (this.proposalAddForm.valid) {      
-      let proposalModel = Object.assign({}, this.proposalAddForm.value);      
-      console.log(this.proposalAddForm.value)
+      let proposalModel = Object.assign({}, this.proposalAddForm.value);  
       this.proposalService.add(proposalModel).subscribe((response)=>{
         this.toastrService.success("Teklif başarı ile oluşturuldu","Başarılı");   
         window.location.reload();     

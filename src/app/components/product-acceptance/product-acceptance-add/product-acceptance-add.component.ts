@@ -63,8 +63,7 @@ export class ProductAcceptanceAddComponent implements OnInit {
 
   addProductAcceptance(){
     if (this.productAcceptanceAddForm.valid) {
-      let productAcceptanceModel = Object.assign({}, this.productAcceptanceAddForm.value);
-      console.log(productAcceptanceModel);
+      let productAcceptanceModel = Object.assign({}, this.productAcceptanceAddForm.value);      
       this.productAcceptanceService.add(productAcceptanceModel).subscribe((response)=>{
         this.toastrService.success(response.message,"Başarılı");   
         window.location.reload(); 
