@@ -57,13 +57,11 @@ export class ShelfEditComponent implements OnInit {
       this.shelfService.update(shelfModel).subscribe((response)=>{
         this.toastrService.success("Raf başarı ile güncellendi","Başarılı");   
         window.location.reload();     
-      },responseError=>{  
-        if(responseError.error.Errors.length>0){
-          for(let i=0;i<responseError.error.Errors.length;i++){
-            this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Hata");
-          }
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
         }       
-      });     
+      });      
     }
   }
 

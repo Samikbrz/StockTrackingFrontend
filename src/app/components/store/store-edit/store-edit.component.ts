@@ -45,10 +45,11 @@ export class StoreEditComponent implements OnInit {
       this.storeService.update(storeModel).subscribe( response => {        
           this.toastrService.success("Depo başarı ile güncellendi",'Başarılı');    
           window.location.reload();                     
-        },responseError => {
-          this.toastrService.error(responseError.messaage , "Hata")
-        }
-      );
+        },responseError=>{                
+          if(responseError.error.Message.length>0){
+            this.toastrService.error(responseError.error.Message,"Hata");
+          }       
+        }); 
     }else{
       this.toastrService.error('Form eksik', 'Hata');
     }

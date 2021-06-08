@@ -36,9 +36,11 @@ export class StoreAddComponent implements OnInit {
       this.storeService.add(storeModel).subscribe((response)=>{
         this.toastrService.success("Depo başarı ile eklendi","Başarılı");   
         window.location.reload();     
-      },(responseError)=>{        
-        this.toastrService.error(responseError.error.message)
-      });      
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });       
     }
   }
 }
