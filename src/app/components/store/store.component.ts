@@ -28,12 +28,16 @@ export class StoreComponent implements OnInit {
     })
   }
 
-  deleteStore(store:Store){    
+  deleteStore(store:any){    
     if(window.confirm("Depoyu silmek istediğinizden emin misiniz?")){
       this.storeService.delete(store).subscribe(response=>{
         this.toastrService.success("Silindi","Başarılı")
         window.location.reload();
-      })
+      },responseError=>{                        
+        if(responseError.error.length>0){
+          this.toastrService.error(responseError.error,"Hata");
+        }       
+      });
     } 
   }
 
