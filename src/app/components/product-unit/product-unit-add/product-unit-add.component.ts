@@ -33,7 +33,7 @@ export class ProductUnitAddComponent implements OnInit {
       this.productUnitService.add(productModel).subscribe((response)=>{
         this.toastrService.success(response.message,"Başarılı");  
         window.location.reload();      
-      },responseError=>{                
+      },responseError=>{                     
         if(responseError.error.Message.length>0){
           this.toastrService.error(responseError.error.Message,"Hata");
         }       

@@ -4,4 +4,5 @@ export interface Proposal{
     date:Date;
     userId:number;
     companyId:number;
+    proposalPrice:number;
 }

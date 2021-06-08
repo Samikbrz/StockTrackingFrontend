@@ -4,6 +4,7 @@
             <th>Teklif Numarası</th>
             <th>Barkod</th>
             <th>Adet</th>
+            <th>Teklif Edilen Fiyat</th>
             <th>Tarih</th>
             <th>Şirket</th>
             <th>Kullanıcı Adı</th>
@@ -16,6 +17,7 @@
             <td>{{proposal.proposalNo}}</td>
             <td>{{proposal.barcode}}</td>
             <td>{{proposal.count}}</td>
+            <td>{{proposal.proposalPrice |currency:"TRY":"₺":""}}</td>
             <td>{{proposal.date |date}}</td>
             <td>{{proposal.companyName}}</td>
             <td>{{proposal.userName}}</td>
