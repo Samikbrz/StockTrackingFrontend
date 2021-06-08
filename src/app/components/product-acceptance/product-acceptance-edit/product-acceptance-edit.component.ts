@@ -92,8 +92,7 @@ export class ProductAcceptanceEditComponent implements OnInit {
       .subscribe((response) => {
         this.productAcceptance = response.data[0];
         this.productAcceptanceUpdateForm.setValue({
-          productRegistrationNumber:
-            this.productAcceptance.productRegistrationNumber,
+          productRegistrationNumber:this.productAcceptance.productRegistrationNumber,
           productName: this.productAcceptance.productName,
           count: this.productAcceptance.count,
           unitPrice: this.productAcceptance.unitPrice,

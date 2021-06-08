@@ -4,9 +4,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Company } from 'src/app/models/company';
 import { Proposal } from 'src/app/models/proposal';
+import { ProposalDetail } from 'src/app/models/proposalDetail';
+import { StockStore } from 'src/app/models/stockStore';
+import { StockStoreDetail } from 'src/app/models/stockStoreDetail';
 import { User } from 'src/app/models/user';
 import { CompanyService } from 'src/app/services/company.service';
 import { ProposalService } from 'src/app/services/proposal.service';
+import { StockStoreService } from 'src/app/services/stock-store.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -19,7 +23,8 @@ export class ProposalEditComponent implements OnInit {
   proposalEditForm:FormGroup;
   companies:Company[];
   users:User[];
-  proposal:Proposal;
+  proposal:ProposalDetail;
+  stockStores:StockStoreDetail[];  
 
   constructor(
     private formBuilder:FormBuilder,
@@ -28,6 +33,7 @@ export class ProposalEditComponent implements OnInit {
     private companyService:CompanyService,
     private toastrService:ToastrService,
     private activatedRoute: ActivatedRoute,
+    private stockStoreService:StockStoreService
   ) {
     this.activatedRoute.params.subscribe((params) => {
       if (params['proposalId']) {
@@ -40,6 +46,7 @@ export class ProposalEditComponent implements OnInit {
     this.createProposalEditForm();
     this.getCompanies();
     this.getUsers();
+    this.getStockStores();
   } 
 
   createProposalEditForm() {
@@ -47,7 +54,10 @@ export class ProposalEditComponent implements OnInit {
       proposalNo:['',Validators.required],
       date:['',Validators.required],
       userId:['',Validators.required],
-      companyId:['',Validators.required]                 
+      companyId:['',Validators.required],
+      barcode:['',Validators.required],
+      count:['',Validators.required],
+      proposalPrice:['',Validators.required]   
     });
   }
 
@@ -63,6 +73,12 @@ export class ProposalEditComponent implements OnInit {
     })
   }
 
+  getStockStores(){
+    this.stockStoreService.getStockStores().subscribe(response=>{
+      this.stockStores=response.data;
+    })
+  }
+
   updateProposal(){
     if (this.proposalEditForm.valid) {
       let proposalModel = Object.assign({}, this.proposalEditForm.value);
@@ -75,17 +91,23 @@ export class ProposalEditComponent implements OnInit {
           this.toastrService.error(responseError.error.Message,"Hata");
         }       
       });       
+    }else{
+      this.toastrService.error("Form Eksik!","Hata");
     }
   }
 
-  getProposalById(proposalId:number){
+  getProposalById(proposalId:number){    
     this.proposalService.getProposalById(proposalId).subscribe((response)=>{
-      this.proposal=response.data[0];
+      this.proposal=response.data[0];   
+      console.log(response.data[0])   
       this.proposalEditForm.setValue({
         proposalNo:this.proposal.proposalNo,
         date:this.proposal.date,
         userId:this.proposal.userId,
-        companyId:this.proposal.companyId,        
+        companyId:this.proposal.companyId, 
+        barcode:this.proposal.barcode,
+        count:this.proposal.count, 
+        proposalPrice:this.proposal.proposalPrice 
       })
     });
   }

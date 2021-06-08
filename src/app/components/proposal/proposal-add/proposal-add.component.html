@@ -11,30 +11,57 @@
                     <div class="form-group mt-1 mb-1">
                         <input class="form-control" 
                         type="text" id="proposalNo"
-                        formControlName="proposalNo"
-                        placeholder="{{proposalNumber}}"                        
-                        readonly                                                                   
+                        formControlName="proposalNo"                                                                                   
                         />
-                    </div>  
+                    </div>                                   
 
-                    <label for="date" class="col-2 col-form-label">Tarih</label>
+                    <label for="barcode">Barkod</label>                   
+                    <select class="form-select mt-1 mb-3" formControlName="barcode">                       
+                        <option  [ngValue]="stockStore.barcode" *ngFor="let stockStore of stockStores">{{stockStore.barcode + "="+stockStore.productName}}</option>                                                                    
+                    </select>
+
+                    <label for="count" class="col-2 col-form-label">Adet</label>
                     <div class="form-group mb-3">                        
                         <div class="col-10">
                             <input class="form-control"
-                            type="date"
-                            formControlName="date">
+                            type="number"
+                            formControlName="count">
                         </div>
                     </div>
 
-                    <label for="userId">Kullanıcı</label>                   
-                    <select class="form-select mt-1 mb-3" formControlName="userId">                       
-                        <option  [ngValue]="user.id" *ngFor="let user of users">{{user.firstName +" "+user.lastName}}</option>                                                                    
-                    </select>  
-
-                    <label for="companyId">Şirket</label>                   
-                    <select class="form-select mt-1 mb-3" formControlName="companyId">                       
-                        <option  [ngValue]="company.id" *ngFor="let company of companies">{{company.companyName}}</option>                                                                    
-                    </select>                                                        
+                    <label for="proposalPrice" class="col-2 col-form-label">Teklif Fiyatı</label>
+                    <div class="form-group mb-3">                        
+                        <div class="col-10">
+                            <input class="form-control"
+                            type="number"
+                            formControlName="proposalPrice">
+                        </div>
+                    </div>                     
+                    
+                    <div class="row">
+                        <div class="col">
+                            <label for="date" class="col-form-label">Tarih</label>
+                            <div class="form-group">                        
+                                <div class="col-10">
+                                    <input class="form-control" 
+                                    type="date"
+                                    formControlName="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="userId">Kullanıcı</label>                   
+                            <select class="form-select mt-1 mb-3" formControlName="userId">                       
+                                <option  [ngValue]="user.id" *ngFor="let user of users">{{user.firstName +" "+user.lastName}}</option>                                                                    
+                            </select>  
+                        </div>
+                        <div class="col">
+                            <label for="companyId">Şirket</label>                   
+                            <select class="form-select mt-1 mb-3" formControlName="companyId">                       
+                                <option  [ngValue]="company.id" *ngFor="let company of companies">{{company.companyName}}</option>                                                                    
+                            </select> 
+                        </div>
+                      </div> 
                 </form>
             </div>
             <div class="card-footer">

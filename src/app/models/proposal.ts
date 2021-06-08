@@ -5,4 +5,6 @@ export interface Proposal{
     userId:number;
     companyId:number;
     proposalPrice:number;
+    count:number;
+    barcode:string;
 }

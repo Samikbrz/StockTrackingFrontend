@@ -3,9 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Company } from 'src/app/models/company';
 import { Proposal } from 'src/app/models/proposal';
+import { StockStoreDetail } from 'src/app/models/stockStoreDetail';
 import { User } from 'src/app/models/user';
 import { CompanyService } from 'src/app/services/company.service';
 import { ProposalService } from 'src/app/services/proposal.service';
+import { StockStoreService } from 'src/app/services/stock-store.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -19,37 +21,23 @@ export class ProposalAddComponent implements OnInit {
   companies:Company[];
   users:User[];   
   proposals:Proposal[];
-  proposalNumber=0;
+  stockStores:StockStoreDetail[];  
 
   constructor(
     private formBuilder:FormBuilder,
     private proposalService:ProposalService,
     private companyService:CompanyService,
     private userService:UserService,
-    private toastrService:ToastrService
-
+    private toastrService:ToastrService,
+    private stockStoreService:StockStoreService
   ) { }
 
   ngOnInit(): void {   
-    this.createProposalAddForm();
-    this.getLastProposal();
+    this.createProposalAddForm();    
     this.getCompanies();
     this.getUsers();   
-  }   
-
-  getLastProposal(){
-    this.proposalService.getProposals().subscribe(response=>{
-      this.proposals=response.data;
-      var lastproposal=this.proposals.pop();
-      this.proposalNumber=lastproposal.proposalNo+1;
-      this.proposalAddForm.setValue({
-        proposalNo:this.proposalNumber,
-        date:null,
-        userId:null,
-        companyId:null                   
-      }) 
-    })
-  }
+    this.getStockStores();
+  }  
 
   getCompanies(){
     this.companyService.getCompanies().subscribe(response=>{
@@ -63,8 +51,17 @@ export class ProposalAddComponent implements OnInit {
     })
   }
 
+  getStockStores(){
+    this.stockStoreService.getStockStores().subscribe(response=>{
+      this.stockStores=response.data;
+    })
+  }
+
   createProposalAddForm() {
-    this.proposalAddForm = this.formBuilder.group({   
+    this.proposalAddForm = this.formBuilder.group({  
+      barcode:['',Validators.required],
+      count:['',Validators.required],
+      proposalPrice:['',Validators.required],
       proposalNo:['',Validators.required],
       date:['',Validators.required],
       userId:['',Validators.required],
@@ -73,8 +70,10 @@ export class ProposalAddComponent implements OnInit {
   }
 
   addProposal(){
-    if (this.proposalAddForm.valid) {
-      let proposalModel = Object.assign({}, this.proposalAddForm.value);
+    console.log(this.proposalAddForm.value)
+    if (this.proposalAddForm.valid) {      
+      let proposalModel = Object.assign({}, this.proposalAddForm.value);      
+      console.log(this.proposalAddForm.value)
       this.proposalService.add(proposalModel).subscribe((response)=>{
         this.toastrService.success("Teklif başarı ile oluşturuldu","Başarılı");   
         window.location.reload();     
@@ -83,6 +82,8 @@ export class ProposalAddComponent implements OnInit {
           this.toastrService.error(responseError.error.Message,"Hata");
         }       
       });       
+    }else{
+      this.toastrService.error("Form eksik!","Hata");
     }
   }
 
