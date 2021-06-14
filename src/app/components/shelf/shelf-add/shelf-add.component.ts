@@ -42,7 +42,7 @@ export class ShelfAddComponent implements OnInit {
 
   addShelf(){
     if (this.shelfAddForm.valid) {
-      let shelfModel = Object.assign({}, this.shelfAddForm.value);
+      let shelfModel = Object.assign({}, this.shelfAddForm.value);      
       this.shelfService.add(shelfModel).subscribe((response)=>{
         this.toastrService.success("Raf başarı ile eklendi","Başarılı");   
         window.location.reload();     

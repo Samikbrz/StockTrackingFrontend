@@ -32,7 +32,11 @@ export class ShelfComponent implements OnInit {
       this.shelfService.delete(shelf).subscribe(response=>{
         this.toastrService.success("Silindi.")
         window.location.reload();
-      })
+      },responseError=>{                       
+        if(responseError.error.length>0){
+          this.toastrService.error(responseError.error,"Hata");
+        }       
+      });
     }    
   }
 
