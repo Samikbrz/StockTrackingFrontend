@@ -33,7 +33,11 @@ export class DrawerComponent implements OnInit {
       this.drawerService.delete(drawer).subscribe(response=>{
         this.toastrService.success("Silindi.")
         window.location.reload();
-      })
+      },responseError=>{                       
+        if(responseError.error.length>0){
+          this.toastrService.error(responseError.error,"Hata");
+        }       
+      });
     }    
   }
 
