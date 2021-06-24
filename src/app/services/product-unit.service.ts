@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ProductUnit } from '../models/productUnit';
 import { ResponseModel } from '../models/responseModel';
-import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +24,18 @@ export class ProductUnitService {
   }
 
   add(productUnit:ProductUnit):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+'/productunits/add',productUnit);
+    let newPath=this.apiUrl+'/productunits/add';
+    return this.httpClient.post<ResponseModel>(newPath,productUnit);
   }
 
   delete(productUnit:ProductUnit):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"/productunits/delete",productUnit);
+    let newPath=this.apiUrl+'/productunits/delete';
+    return this.httpClient.post<ResponseModel>(newPath,productUnit);
   }
 
   update(productUnit:ProductUnit):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"/productunits/update",productUnit);
+    let newPath=this.apiUrl+'/productunits/update';
+    return this.httpClient.post<ResponseModel>(newPath,productUnit);
   }
+
 }
