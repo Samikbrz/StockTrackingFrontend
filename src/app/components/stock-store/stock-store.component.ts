@@ -23,7 +23,7 @@ export class StockStoreComponent implements OnInit {
 
   getStockStores() {
     this.stockStoreService.getStockStores().subscribe(response=>{
-      this.stockStores=response.data;
+      this.stockStores=response.data;     
       this.toastrService.success(response.message,"Başarılı");
     })
   }
@@ -33,7 +33,11 @@ export class StockStoreComponent implements OnInit {
       this.stockStoreService.delete(stockStore).subscribe(response=>{
         window.location.reload();
         this.toastrService.success("Silindi","Başarılı");        
-      })
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });
     } 
   }
 

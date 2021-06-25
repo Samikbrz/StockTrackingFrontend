@@ -30,7 +30,11 @@ export class UserComponent implements OnInit {
       this.userService.delete(user).subscribe(response=>{
         this.toastrService.success(response.message,"Deleted")
         window.location.reload();
-      })
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });
     }
   }
 

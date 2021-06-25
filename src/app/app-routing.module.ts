@@ -9,7 +9,6 @@ import { CompanyComponent } from './components/company/company.component';
 import { DrawerAddComponent } from './components/drawer/drawer-add/drawer-add.component';
 import { DrawerEditComponent } from './components/drawer/drawer-edit/drawer-edit.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
-import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
 import { ModelAddComponent } from './components/model/model-add/model-add.component';
@@ -64,14 +63,13 @@ const routes: Routes = [
   {path:"operationclaim/update/:operationClaimId",component:OperationClaimEditComponent,canActivate:[LoginGuard]},
   {path:"productunits",component:ProductUnitComponent,canActivate:[LoginGuard]},  
   {path:"productunits/add",component:ProductUnitAddComponent,canActivate:[LoginGuard]},
-  {path:"productunit/update/:productUnitId",component:ProductUnitEditComponent,canActivate:[LoginGuard]},
+  {path:"productunits/update/:productUnitId",component:ProductUnitEditComponent,canActivate:[LoginGuard]},
   {path:"productacceptances",component:ProductAcceptanceComponent,canActivate:[LoginGuard]},
   {path:"productacceptance/update/:productAcceptanceId",component:ProductAcceptanceEditComponent,canActivate:[LoginGuard]},
   {path:"productacceptance/add",component:ProductAcceptanceAddComponent,canActivate:[LoginGuard]},
   {path:"productoutputs",component:ProductOutputComponent,canActivate:[LoginGuard]},
   {path:"productOutput/add",component:ProductOutputAddComponent,canActivate:[LoginGuard]},
-  {path:"productOutput/update/:productOutputId",component:ProductOutputEditComponent,canActivate:[LoginGuard]},
-  {path:"exchangerate",component:ExchangeRateComponent,canActivate:[LoginGuard]},
+  {path:"productOutput/update/:productOutputId",component:ProductOutputEditComponent,canActivate:[LoginGuard]},  
   {path:"proposals",component:ProposalComponent,canActivate:[LoginGuard]},   
   {path:"proposal/add",component:ProposalAddComponent,canActivate:[LoginGuard]}, 
   {path:"proposal/update/:proposalId",component:ProposalEditComponent,canActivate:[LoginGuard]},

@@ -32,7 +32,11 @@ export class BrandComponent implements OnInit {
       this.brandService.delete(brand).subscribe(response=>{
         this.toastrService.success("Deleted")
         window.location.reload();
-      })
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });
     }  
   }
 

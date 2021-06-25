@@ -24,6 +24,7 @@ export class StoreTransferComponent implements OnInit {
   getStoreTransfers() {
     this.storeTransferService.getStoreTransfers().subscribe((response) => {
       this.storeTransfers = response.data;
+      console.log(response.data)
       this.toastrService.success(response.message, 'Başarılı');
     });
   }
@@ -33,6 +34,10 @@ export class StoreTransferComponent implements OnInit {
       this.storeTransferService.delete(storeTransfer).subscribe((response) => {
         window.location.reload();
         this.toastrService.success('Silindi', 'Başarılı');
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
       });
     }
   }

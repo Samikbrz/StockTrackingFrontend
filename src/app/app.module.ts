@@ -10,7 +10,6 @@ import { ProductUnitComponent } from './components/product-unit/product-unit.com
 import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ExchangeRateComponent } from './components/exchange-rate/exchange-rate.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
@@ -69,8 +68,7 @@ import { BarcodePipePipe } from './pipes/barcode-pipe.pipe';
     ProductUnitComponent,
     BrandComponent,
     NaviComponent,    
-    SidebarComponent,
-    ExchangeRateComponent,
+    SidebarComponent,    
     VatAddedPipe,
     FilterPipePipe,
     ProductUnitAddComponent,

@@ -12,7 +12,7 @@ import { ProductUnitService } from 'src/app/services/product-unit.service';
 })
 export class ProductUnitEditComponent implements OnInit {
   
-  productUnits:ProductUnit; 
+  productUnit:ProductUnit; 
   productUnitUpdateForm:FormGroup;  
 
   constructor(private toastrService:ToastrService,
@@ -39,7 +39,7 @@ export class ProductUnitEditComponent implements OnInit {
   updateProductUnit(){    
     if(this.productUnitUpdateForm.valid){
       let productUnitModel = Object.assign({}, this.productUnitUpdateForm.value)
-      productUnitModel.id=this.productUnits.id;
+      productUnitModel.id=this.productUnit.id;
       this.productUnitService.update(productUnitModel).subscribe(
         (response) => {        
           this.toastrService.success('Firma güncellendi','Başarılı');          
@@ -56,7 +56,11 @@ export class ProductUnitEditComponent implements OnInit {
 
   getProductUnitById(productUnitId:number){
     this.productUnitService.getProductUnitsById(productUnitId).subscribe((response)=>{
-      this.productUnits=response.data[0];
+      this.productUnit=response.data[0];  
+      console.log(response.data)    
+      this.productUnitUpdateForm.setValue({
+        productUnitName:this.productUnit.productUnitName             
+      })
     });
   }
 }

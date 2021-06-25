@@ -31,7 +31,11 @@ export class CompanyComponent implements OnInit {
       this.companyService.delete(company).subscribe(response=>{
         this.toastrService.success("Deleted")
         window.location.reload();
-      })
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });
     }    
   }
 }

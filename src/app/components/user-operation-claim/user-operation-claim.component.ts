@@ -33,7 +33,11 @@ export class UserOperationClaimComponent implements OnInit {
       this.userOperationClaimService.delete(useroperationclaim).subscribe(response=>{
         this.toastrService.success("Silindi","Başarılı")
         window.location.reload();
-      })
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });
     }
   }
 

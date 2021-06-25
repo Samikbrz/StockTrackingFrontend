@@ -17,7 +17,7 @@
         <tr *ngFor="let product of products |filterPipe:filterText">            
             <td>{{product.productUnitName |uppercase}}</td>
             <td>
-                <button type="button" class="btn btn-primary" routerLink="/productunit/update/{{product.id}}" (click)="setCurrentProduct(product)">Güncelle</button>                
+                <button type="button" class="btn btn-primary" routerLink="/productunits/update/{{product.id}}">Güncelle</button>                
             </td> 
             <td>                
                 <button type="button" class="btn btn-danger  ml-2" (click)="deleteProductUnit(product)">Sil</button>

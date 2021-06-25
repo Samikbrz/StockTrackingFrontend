@@ -11,8 +11,7 @@ import { ProductUnitService } from 'src/app/services/product-unit.service';
 export class ProductUnitComponent implements OnInit {
   
   pageOfItems: Array<any>;
-  products: ProductUnit[] = []; 
-  selectedProductUnit:ProductUnit=null;
+  products: ProductUnit[] = [];  
   public filterText="";
   
   constructor(private productUnitService:ProductUnitService, private toastrService:ToastrService) {}
@@ -33,16 +32,11 @@ export class ProductUnitComponent implements OnInit {
       this.productUnitService.delete(productUnit).subscribe(response=>{
         this.toastrService.success("Deleted")
         window.location.reload();
-      })
+      },responseError=>{                
+        if(responseError.error.Message.length>0){
+          this.toastrService.error(responseError.error.Message,"Hata");
+        }       
+      });
     }    
-  }
-
-  setCurrentProduct(productUnit:ProductUnit){
-    this.selectedProductUnit=productUnit;
-  }
-
-  onChangePage(pageOfItems: Array<any>) {   
-    this.pageOfItems = pageOfItems;
-}
-  
+  }  
 }
